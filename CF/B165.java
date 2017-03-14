@@ -1,0 +1,66 @@
+package CF;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class B165 {
+
+	public static void main(String[] args) throws IOException {
+		Scanner in = new Scanner(System.in);
+		int n = in.nextInt();
+		int k = in.nextInt();
+		long pow[] = new long[32];
+		pow[0] = 1;
+		for (int i = 1; i < 32; i++)
+			pow[i] = pow[i - 1] * k;
+
+		int low = 1, high = n, ans = -1;
+		while (low <= high) {
+			int v = (low + high) >> 1;
+			int rem = n;
+			for (int i = 0; i < 32; i++){
+				if(v / pow[i] == 0)
+					break;
+				rem -= v / pow[i];
+			}
+			if (rem > 0) {
+				low = v + 1;
+			} else {
+				high = v - 1;
+				ans = v;
+			}
+		}
+		System.out.println(ans);
+
+	}
+
+	static class Scanner {
+		StringTokenizer st;
+		BufferedReader br;
+
+		public Scanner(InputStream s) {
+			br = new BufferedReader(new InputStreamReader(s));
+		}
+
+		public String next() throws IOException {
+			while (st == null || !st.hasMoreTokens())
+				st = new StringTokenizer(br.readLine());
+			return st.nextToken();
+		}
+
+		public int nextInt() throws IOException {
+			return Integer.parseInt(next());
+		}
+
+		public long nextLong() throws IOException {
+			return Long.parseLong(next());
+		}
+
+		public String nextLine() throws IOException {
+			return br.readLine();
+		}
+	}
+}
