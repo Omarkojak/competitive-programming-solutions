@@ -14,34 +14,42 @@ public class B758 {
 		char[] s = in.nextLine().toCharArray();
 		int n = s.length;
 		int cntr = 0, cntb = 0, cnty = 0, cntg = 0;
-		char [] symbols = new char[4];
-		for(int i=0;i<n;i++)
-			if(s[i] != '!')
-				symbols[i%4] = s[i];
-		
+		char[] symbols = new char[4];
+		for (int i = 0; i < n; i++)
+			if (s[i] != '!')
+				symbols[i % 4] = s[i];
+
 		TreeSet<Character> ts = new TreeSet<>();
-		ts.add('B');ts.add('G');ts.add('R');ts.add('Y');
-	
-		for(int i=0;i<4;i++)
+		ts.add('B');
+		ts.add('G');
+		ts.add('R');
+		ts.add('Y');
+
+		for (int i = 0; i < 4; i++)
 			ts.remove(symbols[i]);
-		
-		for(int i=0;i<4;i++)
-			if(symbols[i] == ' ')
+
+		for (int i = 0; i < 4; i++)
+			if (symbols[i] == ' ')
 				symbols[i] = ts.pollFirst();
 
-		for(int i = 0;i<n;i++){
-			if(s[i] == '!')
-				switch(symbols[i % 4]){
-				case 'R' : cntr++; break;
-				case 'G' : cntg++; break;
-				case 'B' : cntb++; break;
-				case 'Y' : cnty++;
+		for (int i = 0; i < n; i++) {
+			if (s[i] == '!')
+				switch (symbols[i % 4]) {
+				case 'R':
+					cntr++;
+					break;
+				case 'G':
+					cntg++;
+					break;
+				case 'B':
+					cntb++;
+					break;
+				case 'Y':
+					cnty++;
 				}
 		}
 		System.out.println(cntr + " " + cntb + " " + cnty + " " + cntg);
-		
-		
-		
+
 	}
 
 	static class Scanner {

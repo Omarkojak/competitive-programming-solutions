@@ -38,7 +38,6 @@ public class F474 {
 			int ans = j - i + 1;
 			if (t != null && t.min == t.gcd)
 				ans -= t.occ;
-			// System.out.println(t.min + " " + t.gcd + " " + t.occ);
 			sb.append(ans).append("\n");
 		}
 		System.out.print(sb);

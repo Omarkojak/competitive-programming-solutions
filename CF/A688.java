@@ -10,7 +10,7 @@ public class A688 {
 
 	public static void main(String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);
-		int n = in.nextInt();
+		in.nextInt();
 		int d = in.nextInt();
 		int cnt = 0;
 		int max = 0;

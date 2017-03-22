@@ -21,8 +21,8 @@ public class B165 {
 		while (low <= high) {
 			int v = (low + high) >> 1;
 			int rem = n;
-			for (int i = 0; i < 32; i++){
-				if(v / pow[i] == 0)
+			for (int i = 0; i < 32; i++) {
+				if (v / pow[i] == 0)
 					break;
 				rem -= v / pow[i];
 			}

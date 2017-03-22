@@ -37,8 +37,8 @@ public class C732 {
 				long val = 0;
 				if ((a3 - 1) - a2 > 0)
 					val += (a3 - 1) - a2;
-				if((a3 - 1) - a1 > 0)
-					val+= (a3 - 1) - a1;
+				if ((a3 - 1) - a1 > 0)
+					val += (a3 - 1) - a1;
 
 				min = Math.min(min, val);
 			}
@@ -46,19 +46,19 @@ public class C732 {
 
 		if (a2 >= a1 && a2 >= a3) {
 			long val = 0;
-			if((a2 - 1) - a3 > 0)
-				val+=(a2 - 1) - a3;
-			if((a2 - 1) - a1 > 0)
-				val+=(a2 - 1) - a1;
+			if ((a2 - 1) - a3 > 0)
+				val += (a2 - 1) - a3;
+			if ((a2 - 1) - a1 > 0)
+				val += (a2 - 1) - a1;
 			min = Math.min(min, val);
 		}
 
 		if (a1 <= a2 && a2 <= a3) {
 			long val = 0;
-			if((a3 - 1) - a2 > 0)
-				val+=(a3 - 1) - a2;
-			if((a3 - 1) - a1 > 0)
-				val+=(a3 - 1) - a1;
+			if ((a3 - 1) - a2 > 0)
+				val += (a3 - 1) - a2;
+			if ((a3 - 1) - a1 > 0)
+				val += (a3 - 1) - a1;
 			min = Math.min(min, val);
 		}
 		System.out.println(min);

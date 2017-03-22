@@ -20,20 +20,16 @@ public class A767 {
 		int end = n;
 		for (int i = 0; i < n; i++) {
 			ts.add(arr[i]);
-			while(!ts.isEmpty() && ts.last() == end){
+			while (!ts.isEmpty() && ts.last() == end) {
 				int x = ts.pollLast();
 				sb.append(x + " ");
 				end--;
 			}
 			sb.append("\n");
 		}
-	
 
-		
 		System.out.print(sb);
 	}
-	
-	
 
 	static class Scanner {
 		StringTokenizer st;

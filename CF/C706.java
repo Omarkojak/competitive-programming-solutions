@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class C706 {
@@ -14,8 +13,7 @@ public class C706 {
 	static long dp[][];
 	static final long inf = (long) 1e18;
 
-	public static long solve(int idx, int reversed) // rev 1-> true 0-> false
-	{
+	public static long solve(int idx, int reversed) { // rev 1-> true 0-> false
 		if (idx == n)
 			return 0;
 		if (dp[idx][reversed] != -1)
@@ -60,11 +58,8 @@ public class C706 {
 			dp[i][0] = -1;
 			dp[i][1] = -1;
 		}
-		// System.out.println("ba".compareTo("ac")); //1
-		// System.out.println("ac".compareTo("ba")); //-1
-		// System.out.println("aa".compareTo("aa")); //0
-		 long min = Math.min(cost[0] + solve(1, 1), solve(1, 0));
-		 System.out.println((min == inf)? -1:min);
+		long min = Math.min(cost[0] + solve(1, 1), solve(1, 0));
+		System.out.println((min == inf) ? -1 : min);
 
 	}
 

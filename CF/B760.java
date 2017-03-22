@@ -56,11 +56,10 @@ public class B760 {
 
 	public static void main(String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);
-		StringBuilder sb = new StringBuilder();
 		sum = new long[100000];
 		for (int i = 1; i < 100000; i++) {
 			sum[i] = ((long) i) * (i + 1) / 2;
-			
+
 		}
 		long n = in.nextLong();
 		long m = in.nextLong();

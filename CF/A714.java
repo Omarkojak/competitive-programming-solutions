@@ -19,20 +19,20 @@ public class A714 {
 			System.out.println(0);
 			return;
 		}
-		
+
 		long l = -1;
-		if(l1 < l2)
+		if (l1 < l2)
 			l = l2;
 		else
 			l = l1;
-		
+
 		long r = -1;
-		if(r1 < r2)
+		if (r1 < r2)
 			r = r1;
 		else
 			r = r2;
 		long ans = r - l + 1;
-		if(k >= l && k<= r)
+		if (k >= l && k <= r)
 			ans--;
 		System.out.println(ans);
 

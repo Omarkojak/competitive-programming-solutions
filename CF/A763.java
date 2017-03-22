@@ -20,10 +20,10 @@ public class A763 {
 			if (p != v) {
 				dfs(v, u);
 				if (color[v] != color[u]) {
-					if (!valid[v]){
+					if (!valid[v]) {
 						if (p != -1 && color[u] != color[p])
 							ok = false;
-					}else
+					} else
 						valid[u] = false;
 				}
 			}
@@ -62,7 +62,7 @@ public class A763 {
 			System.out.println("NO");
 		else {
 			System.out.println("YES");
-			System.out.println(vertex == -1? 1:vertex);
+			System.out.println(vertex == -1 ? 1 : vertex);
 		}
 
 	}

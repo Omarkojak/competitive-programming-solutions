@@ -25,17 +25,17 @@ public class A494 {
 		}
 		int add = prefix[n - 1];
 		StringBuilder sb = new StringBuilder();
-		for(int i=0;i<last;i++){
-			if(s[i] == '#')
+		for (int i = 0; i < last; i++) {
+			if (s[i] == '#')
 				sb.append("1\n");
 		}
 		sb.append((1 + add));
 		for (int i = last; i < n; i++) {
 			prefix[i] -= add;
-			if(prefix[i] < 0)
+			if (prefix[i] < 0)
 				f = false;
 		}
-		System.out.println(f? sb:"-1");
+		System.out.println(f ? sb : "-1");
 
 	}
 

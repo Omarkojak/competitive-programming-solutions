@@ -10,7 +10,6 @@ public class A725 {
 
 	public static void main(String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);
-		StringBuilder sb = new StringBuilder();
 		int n = in.nextInt();
 		char[] s = in.nextLine().toCharArray();
 		int[] prefix = new int[s.length + 1];
@@ -33,14 +32,13 @@ public class A725 {
 		}
 
 		for (int i = 1; i <= n; i++) {
-			if(s[i - 1] == '<' && i + prefix[i] <= 0)
+			if (s[i - 1] == '<' && i + prefix[i] <= 0)
 				cnt++;
-			else
-				if(s[i - 1] == '>' && i + suffix[i] > n)
-					cnt++;
-				
-//			if(i + prefix[i] <= 0 || i + suffix[i] > n)
-//				cnt++;
+			else if (s[i - 1] == '>' && i + suffix[i] > n)
+				cnt++;
+
+			// if(i + prefix[i] <= 0 || i + suffix[i] > n)
+			// cnt++;
 		}
 		System.out.println(cnt);
 	}

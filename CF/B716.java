@@ -49,8 +49,8 @@ public class B716 {
 				c += 1;
 			}
 		}
-		for(int i=0;i<n;i++)
-			if(s[i] == '?')
+		for (int i = 0; i < n; i++)
+			if (s[i] == '?')
 				s[i] = 'A';
 		for (char k : s)
 			System.out.print(k);

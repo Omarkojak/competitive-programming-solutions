@@ -7,87 +7,92 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class B344 {
-	
-	
+
 	public static void main(String[] args) throws IOException {
-		Scanner in=new Scanner(System.in);
-		int a=in.nextInt();
-		int b=in.nextInt();
-		int c=in.nextInt();
-		boolean flag=false;
-		int c3=-1;int c2=-1;int i=0;int rrrr=-1;
-		for(;i<=a;i++){		//between 1 and 3
-			int rem = a-i;
-			c3 = i;c2 = rem;
-			if(c3>c|| c2>b){
+		Scanner in = new Scanner(System.in);
+		int a = in.nextInt();
+		int b = in.nextInt();
+		int c = in.nextInt();
+		boolean flag = false;
+		int c3 = -1;
+		int c2 = -1;
+		int i = 0;
+		int rrrr = -1;
+		for (; i <= a; i++) { // between 1 and 3
+			int rem = a - i;
+			c3 = i;
+			c2 = rem;
+			if (c3 > c || c2 > b) {
 				continue;
 			}
-			int rem3 = c-c3;
-			int rem2 = b- c2;
-			if(rem3 == rem2 ){
-				rrrr=rem3;
+			int rem3 = c - c3;
+			int rem2 = b - c2;
+			if (rem3 == rem2) {
+				rrrr = rem3;
 				flag = true;
 				break;
 			}
-			
+
 		}
-		if(flag)
-			System.out.println((a-i)+" "+rrrr+" "+i);
+		if (flag)
+			System.out.println((a - i) + " " + rrrr + " " + i);
 		else
 			System.out.println("Impossible");
 	}
-	
-	static class Scanner 
-	{
+
+	static class Scanner {
 		StringTokenizer st;
 		BufferedReader br;
 
-		public Scanner(InputStream s){	br = new BufferedReader(new InputStreamReader(s));}
+		public Scanner(InputStream s) {
+			br = new BufferedReader(new InputStreamReader(s));
+		}
 
-		public String next() throws IOException 
-		{
-			while (st == null || !st.hasMoreTokens()) 
+		public String next() throws IOException {
+			while (st == null || !st.hasMoreTokens())
 				st = new StringTokenizer(br.readLine());
 			return st.nextToken();
 		}
 
-		public int nextInt() throws IOException {return Integer.parseInt(next());}
-		
-		public long nextLong() throws IOException {return Long.parseLong(next());}
+		public int nextInt() throws IOException {
+			return Integer.parseInt(next());
+		}
 
-		public String nextLine() throws IOException {return br.readLine();}
-		
-		public double nextDouble() throws IOException
-		{
+		public long nextLong() throws IOException {
+			return Long.parseLong(next());
+		}
+
+		public String nextLine() throws IOException {
+			return br.readLine();
+		}
+
+		public double nextDouble() throws IOException {
 			String x = next();
 			StringBuilder sb = new StringBuilder("0");
 			double res = 0, f = 1;
 			boolean dec = false, neg = false;
 			int start = 0;
-			if(x.charAt(0) == '-')
-			{
+			if (x.charAt(0) == '-') {
 				neg = true;
 				start++;
 			}
-			for(int i = start; i < x.length(); i++)
-				if(x.charAt(i) == '.')
-				{
+			for (int i = start; i < x.length(); i++)
+				if (x.charAt(i) == '.') {
 					res = Long.parseLong(sb.toString());
 					sb = new StringBuilder("0");
 					dec = true;
-				}
-				else
-				{
+				} else {
 					sb.append(x.charAt(i));
-					if(dec)
+					if (dec)
 						f *= 10;
 				}
 			res += Long.parseLong(sb.toString()) / f;
-			return res * (neg?-1:1);
+			return res * (neg ? -1 : 1);
 		}
-		
-		public boolean ready() throws IOException {return br.ready();}
 
+		public boolean ready() throws IOException {
+			return br.ready();
+		}
 
 	}
 }

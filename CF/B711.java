@@ -24,8 +24,7 @@ public class B711 {
 				}
 			}
 		}
-		if(n == 1)
-		{
+		if (n == 1) {
 			System.out.println(1);
 			return;
 		}
@@ -82,46 +81,43 @@ public class B711 {
 		for (int i = 0; i < n; i++)
 			sumitscol += maze[i][y];
 
-		
 		if (x != y && y != n - x - 1) {
 
 			long val = Math.abs(sumitsrow - sumr);
-			if(val + sumitscol == sumc && sumr == sumd1 && sumr == sumd2 && val > 0)
+			if (val + sumitscol == sumc && sumr == sumd1 && sumr == sumd2
+					&& val > 0)
 				System.out.println(val);
 			else
 				System.out.println(-1);
 			return;
 		}
-		
-		if(x !=y && y == n-x-1)
-		{
+
+		if (x != y && y == n - x - 1) {
 			long val = (long) Math.abs(sumitsrow - sumr);
-			if(val + sumitscol == sumr && val + sumd2 == sumr && sumd1 == sumr && sumd1 == sumc && val > 0)
+			if (val + sumitscol == sumr && val + sumd2 == sumr && sumd1 == sumr
+					&& sumd1 == sumc && val > 0)
 				System.out.println(val);
 			else
 				System.out.println(-1);
 			return;
 		}
-		if(x ==y && y != n-x-1)
-		{
+		if (x == y && y != n - x - 1) {
 			long val = (long) Math.abs(sumitsrow - sumr);
-			if(val + sumitscol == sumr && val + sumd1 == sumr && sumd2 == sumr && sumd2 == sumc && val > 0)
+			if (val + sumitscol == sumr && val + sumd1 == sumr && sumd2 == sumr
+					&& sumd2 == sumc && val > 0)
 				System.out.println(val);
 			else
 				System.out.println(-1);
 			return;
 		}
-		
-		
+
 		long val = (long) Math.abs(sumitsrow - sumr);
 
-		if(val + sumitscol == sumr && val + sumd2 == sumr && val + sumd1 == sumr && sumd2 + val == sumd1 + val && val > 0)
+		if (val + sumitscol == sumr && val + sumd2 == sumr
+				&& val + sumd1 == sumr && sumd2 + val == sumd1 + val && val > 0)
 			System.out.println(val);
 		else
 			System.out.println(-1);
-
-		
-		
 
 	}
 

@@ -14,7 +14,7 @@ public class D725 {
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt();
 		long ballons = in.nextLong();
-		long weight = in.nextLong();
+		in.nextLong();
 		PriorityQueue<Team> better = new PriorityQueue<>(
 				new Comparator<Team>() {
 					public int compare(Team t1, Team t2) {
@@ -41,10 +41,11 @@ public class D725 {
 
 		int place = better.size() + 1;
 		while (ballons > 0) {
-			if (better.size() > 0 && better.peek().w - better.peek().t + 1 <= ballons) {
+			if (better.size() > 0
+					&& better.peek().w - better.peek().t + 1 <= ballons) {
 				Team fly = better.poll();
 				ballons -= (fly.w - fly.t + 1);
-				while(worse.size() > 0 && worse.peek().t > ballons){
+				while (worse.size() > 0 && worse.peek().t > ballons) {
 					better.add(worse.poll());
 				}
 			} else {

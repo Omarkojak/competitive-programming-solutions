@@ -42,7 +42,7 @@ public class E519 {
 			graph[u].add(v);
 			graph[v].add(u);
 		}
-		int k = (int) Math.floor(Math.log(n) / Math.log(2))+1;
+		int k = (int) Math.floor(Math.log(n) / Math.log(2)) + 1;
 		euler = new int[n << 1];
 		level = new int[n << 1];
 		index = new int[n];
@@ -53,15 +53,14 @@ public class E519 {
 		dfs(0, -1, 0);
 		for (int j = 1; 1 << j < n; j++)
 			for (int i = 0; i < n; i++)
-				if (P[i][j-1] != -1)
+				if (P[i][j - 1] != -1)
 					P[i][j] = P[P[i][j - 1]][j - 1];
 		SparseTable st = new SparseTable(level);
 		int q = in.nextInt();
 		while (q-- > 0) {
 			int a = in.nextInt() - 1;
 			int b = in.nextInt() - 1;
-			if(a == b)
-			{
+			if (a == b) {
 				System.out.println(n);
 				continue;
 			}
@@ -78,7 +77,8 @@ public class E519 {
 				continue;
 			}
 			if (la - lca == lb - lca) {
-					System.out.println(n - size[query(a, la - lca - 1)] - size[query(b, la - lca - 1)]);
+				System.out.println(n - size[query(a, la - lca - 1)]
+						- size[query(b, la - lca - 1)]);
 				continue;
 			}
 			int leveln = (la + lb - 2 * lca) / 2;
@@ -88,7 +88,6 @@ public class E519 {
 				b = a;
 				a = temp;
 			}
-			//System.out.println(a + " " + child);
 			int aa = query(a, child);
 			int bb = query(a, leveln);
 			System.out.println(size[bb] - size[aa]);
@@ -116,27 +115,20 @@ public class E519 {
 			SpT = new int[n][k];
 
 			for (int i = 0; i < n; i++)
-				SpT[i][0] = i; // RMQ of sub array starting at index i and of
-								// length 2^0=1
+				SpT[i][0] = i;
 
-			// overall time complexity = O(n log n)
 			for (int j = 1; (1 << j) <= n; j++)
 				for (int i = 0; i + (1 << j) - 1 < n; i++)
-					// i+(1<<j)-1 is the index of the last element in the sub
-					// array
+
 					if (A[SpT[i][j - 1]] < A[SpT[i + (1 << (j - 1))][j - 1]])
-						SpT[i][j] = SpT[i][j - 1]; // start at index i of length
-													// 2^(j-1)
+						SpT[i][j] = SpT[i][j - 1];
 					else
-						// start at index i+2^(j-1) of length 2^(j-1)
 						SpT[i][j] = SpT[i + (1 << (j - 1))][j - 1];
 		}
 
 		int query(int i, int j) {
 
-			int k = (int) Math.floor(Math.log(j - i + 1) / Math.log(2)); // 2^k
-																			// <=
-																			// (j-i+1)
+			int k = (int) Math.floor(Math.log(j - i + 1) / Math.log(2));
 
 			if (A[SpT[i][k]] <= A[SpT[j - (1 << k) + 1][k]])
 				return SpT[i][k];

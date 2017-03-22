@@ -13,15 +13,15 @@ public class A732 {
 		long n = in.nextLong();
 		int k = in.nextInt();
 		int cnt = 1;
-		while(true){
-			
-			if((cnt * n) % 10 == 0 || (cnt * n - k) % 10 == 0)
+		while (true) {
+
+			if ((cnt * n) % 10 == 0 || (cnt * n - k) % 10 == 0)
 				break;
-			
-				cnt++;
+
+			cnt++;
 		}
 		System.out.println(cnt);
-		
+
 	}
 
 	static class Scanner {

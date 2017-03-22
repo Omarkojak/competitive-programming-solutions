@@ -37,7 +37,7 @@ public class B723 {
 				if (f) {
 					if (sofar.length() != 0)
 						a2++;
-				}else
+				} else
 					a1 = Math.max(a1, sofar.length());
 				sofar = new StringBuilder();
 				continue;
@@ -45,9 +45,9 @@ public class B723 {
 			sofar.append(s[i]);
 
 		}
-		
+
 		a1 = Math.max(a1, sofar.length());
-		
+
 		System.out.println(a1 + " " + a2);
 
 	}

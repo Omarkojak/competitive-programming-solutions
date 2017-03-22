@@ -16,22 +16,21 @@ public class D69 {
 		if (x * x + y * y > d * d)
 			return id;
 
-		if(dp[id][msk][x+offset][y+offset] != -1)
-			return dp[id][msk][x+offset][y+offset];
-		
+		if (dp[id][msk][x + offset][y + offset] != -1)
+			return dp[id][msk][x + offset][y + offset];
+
 		int next = id ^ 1;
 		if ((msk | (1 << id)) == 0) {
 			int newy = y > x ? x - (y - x) : x + (x - y);
 			next = solve(id ^ 1, x, newy, msk | (1 << id));
 		}
 
-		for (int i = 0; i < n && next != id; i++) 
+		for (int i = 0; i < n && next != id; i++)
 			next = solve(id ^ 1, x + vx[i], y + vy[i], msk);
-		
-		return dp[id][msk][x+offset][y+offset] = next;
+
+		return dp[id][msk][x + offset][y + offset] = next;
 	}
 
-	
 	public static void main(String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);
 		int x = in.nextInt();
@@ -40,18 +39,17 @@ public class D69 {
 		d = in.nextInt();
 		vx = new int[n];
 		vy = new int[n];
-		for(int i=0;i<n;i++){
+		for (int i = 0; i < n; i++) {
 			vx[i] = in.nextInt();
 			vy[i] = in.nextInt();
 		}
 		dp = new int[2][4][405][405];
-		for(int i=0;i<2;i++)
-			for(int j=0;j<4;j++)
-				for(int k=0;k<405;k++)
+		for (int i = 0; i < 2; i++)
+			for (int j = 0; j < 4; j++)
+				for (int k = 0; k < 405; k++)
 					Arrays.fill(dp[i][j][k], -1);
-		
-		
-		System.out.println(solve(0, x, y, 0) == 0? "Anton":"Dasha");
+
+		System.out.println(solve(0, x, y, 0) == 0 ? "Anton" : "Dasha");
 	}
 
 	static class Scanner {

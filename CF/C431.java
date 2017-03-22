@@ -23,9 +23,8 @@ public class C431 {
 			return dp[w][max];
 
 		long ret = 0;
-		for (int i = 1; i <= k; i++) 
+		for (int i = 1; i <= k; i++)
 			ret = (ret + (solve(w - i, Math.max(max, i)) % MOD)) % MOD;
-		
 
 		return dp[w][max] = ret;
 	}

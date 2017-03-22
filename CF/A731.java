@@ -14,11 +14,10 @@ public class A731 {
 		int ans = 0;
 		char prev = 'a';
 		for (char c : s) {
-			if(c > prev)
+			if (c > prev)
 				ans += Math.min(c - prev, prev - 'a' + 26 - (c - 'a'));
 			else
 				ans += Math.min(prev - c, 26 - (prev - 'a') + c - 'a');
-//			System.err.println(ans);
 			prev = c;
 		}
 		System.out.println(ans);

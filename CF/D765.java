@@ -24,10 +24,10 @@ public class D765 {
 		int number[] = new int[n + 5];
 		boolean f = true;
 		int cnt = 1;
-		while(!ts.isEmpty()){
+		while (!ts.isEmpty()) {
 			int x = ts.pollFirst();
-			h[cnt] = x;	//x-> f(x)
-			if(arr[x] != x)
+			h[cnt] = x; // x-> f(x)
+			if (arr[x] != x)
 				f = false;
 			number[x] = cnt;
 			cnt++;

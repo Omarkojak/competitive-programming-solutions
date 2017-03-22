@@ -12,7 +12,7 @@ public class B688 {
 		Scanner in = new Scanner(System.in);
 		String s = in.nextLine();
 		StringBuilder sb = new StringBuilder(s);
-		for(int j=s.length() - 1;j>= 0 ; j--)
+		for (int j = s.length() - 1; j >= 0; j--)
 			sb.append(s.charAt(j));
 		System.out.println(sb);
 	}

@@ -10,36 +10,34 @@ public class B725 {
 
 	public static void main(String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);
-		StringBuilder sb = new StringBuilder();
 		String s = in.nextLine();
 		int n = s.length();
 		char seat = s.charAt(n - 1);
 		long row = Long.parseLong(s.substring(0, n - 1));
-		long blocks = (row - 1) /4;
-		
+		long blocks = (row - 1) / 4;
+
 		long ans = blocks * 12 + blocks * 3 + blocks;
-		if(row % 4 == 2 || row % 4 == 0)
-			ans+=7;
-		
-		if(seat == 'f')
+		if (row % 4 == 2 || row % 4 == 0)
+			ans += 7;
+
+		if (seat == 'f')
 			ans++;
-		
-		if(seat == 'e')
-			ans+=2;
-		
-		if(seat == 'd')
-			ans+=3;
-		
-		if(seat == 'a')
-			ans+=4;
-		
-		if(seat == 'b')
-			ans+=5;
-		
-		if(seat == 'c')
-			ans+=6;
+
+		if (seat == 'e')
+			ans += 2;
+
+		if (seat == 'd')
+			ans += 3;
+
+		if (seat == 'a')
+			ans += 4;
+
+		if (seat == 'b')
+			ans += 5;
+
+		if (seat == 'c')
+			ans += 6;
 		System.out.println(ans);
-		
 
 	}
 

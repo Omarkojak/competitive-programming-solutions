@@ -21,8 +21,7 @@ public class B707 {
 		PriorityQueue<Edge> pq = new PriorityQueue<>();
 		dist = new long[n];
 		Arrays.fill(dist, inf);
-		for(int i=0;i<storages.length;i++)
-		{
+		for (int i = 0; i < storages.length; i++) {
 			pq.add(new Edge(storages[i], 0));
 			dist[storages[i]] = 0;
 		}
@@ -57,9 +56,8 @@ public class B707 {
 			adjList[v].add(new Edge(u, c));
 		}
 		storages = new int[k];
-		boolean []stor = new boolean [n];
-		for (int i = 0; i < k; i++)
-		{
+		boolean[] stor = new boolean[n];
+		for (int i = 0; i < k; i++) {
 			storages[i] = in.nextInt() - 1;
 			stor[storages[i]] = true;
 		}
@@ -69,10 +67,10 @@ public class B707 {
 		}
 		dijkstra();
 		long min = inf;
-		for(int i=0;i<n;i++)
-			if(!stor[i])
+		for (int i = 0; i < n; i++)
+			if (!stor[i])
 				min = Math.min(min, dist[i]);
-		if(min == inf)
+		if (min == inf)
 			System.out.println(-1);
 		else
 			System.out.println(min);

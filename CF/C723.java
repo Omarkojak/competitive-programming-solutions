@@ -9,7 +9,7 @@ import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 public class C723 {
-	
+
 	public static void main(String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt();

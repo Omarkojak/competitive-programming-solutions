@@ -42,10 +42,10 @@ public class B721 {
 			trials++;
 			zeft++;
 		}
-		if(trials == k)
-			zeft+=5;
+		if (trials == k)
+			zeft += 5;
 
-		System.out.print((best + 1) + " " + (zeft + 1) );
+		System.out.print((best + 1) + " " + (zeft + 1));
 
 	}
 

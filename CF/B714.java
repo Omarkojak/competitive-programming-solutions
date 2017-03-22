@@ -27,7 +27,7 @@ public class B714 {
 			if (a2 - a1 != a3 - a2)
 				flag = false;
 		}
-		System.out.println(flag? "YES":"NO");
+		System.out.println(flag ? "YES" : "NO");
 	}
 
 	static class Scanner {

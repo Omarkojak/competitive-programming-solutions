@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class A377 {
@@ -13,30 +12,30 @@ public class A377 {
 	static int cnt;
 	static boolean vis[][];
 
-	public static void dfs(int i, int j)
-	{
-		if(cnt == 0)
+	public static void dfs(int i, int j) {
+		if (cnt == 0)
 			return;
 
 		vis[i][j] = true;
 		cnt--;
 
-		if(valid(i+1, j))
-			dfs(i+1, j);
-		
-		if(valid(i-1, j))
-			dfs(i-1, j);
-		
-		if(valid(i, j+1))
-			dfs(i, j+1);
-		
-		if(valid(i, j-1))
-			dfs(i, j-1);
+		if (valid(i + 1, j))
+			dfs(i + 1, j);
+
+		if (valid(i - 1, j))
+			dfs(i - 1, j);
+
+		if (valid(i, j + 1))
+			dfs(i, j + 1);
+
+		if (valid(i, j - 1))
+			dfs(i, j - 1);
 
 	}
-	
+
 	static boolean valid(int i, int j) {
-		return i >= 0 && i < n && j >= 0 && j < m && grid[i][j] != '#' && !vis[i][j];
+		return i >= 0 && i < n && j >= 0 && j < m && grid[i][j] != '#'
+				&& !vis[i][j];
 	}
 
 	public static void main(String[] args) throws IOException {
@@ -61,8 +60,8 @@ public class A377 {
 			}
 		}
 
-		cnt = dots- blocked;
-		vis = new boolean [n][m];
+		cnt = dots - blocked;
+		vis = new boolean[n][m];
 		dfs(x, y);
 
 		StringBuilder sb = new StringBuilder();

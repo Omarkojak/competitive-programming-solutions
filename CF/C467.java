@@ -18,9 +18,9 @@ public class C467 {
 		if (rem == 0)
 			return 0;
 
-		if(dp[idx][rem] != -1)
+		if (dp[idx][rem] != -1)
 			return dp[idx][rem];
-		
+
 		long s = 0;
 		if (idx + m <= n)
 			s = sum[idx + m - 1] - (idx > 0 ? sum[idx - 1] : 0);
@@ -43,7 +43,7 @@ public class C467 {
 				sum[i] += sum[i - 1];
 		}
 		dp = new long[n + 5][k + 5];
-		for(int i=0;i<n+5;i++)
+		for (int i = 0; i < n + 5; i++)
 			Arrays.fill(dp[i], -1);
 		System.out.println(solve(0, k));
 

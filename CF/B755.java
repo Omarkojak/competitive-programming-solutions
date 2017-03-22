@@ -27,7 +27,7 @@ public class B755 {
 			m--;
 			f = !f;
 		}
-		if(!f){
+		if (!f) {
 			m--;
 		}
 		if (n > m)

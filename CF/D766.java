@@ -75,11 +75,12 @@ public class D766 {
 				sb.append("1\n");
 			else {
 				if (uf.opp[w1] != -1 && uf.opp[w2] != -1) {
-					if(uf.isSameSet(w1, uf.opp[w2]) || uf.isSameSet(w2, uf.opp[w1]))
+					if (uf.isSameSet(w1, uf.opp[w2])
+							|| uf.isSameSet(w2, uf.opp[w1]))
 						sb.append("2\n");
 					else
 						sb.append("3\n");
-				}else
+				} else
 					sb.append("3\n");
 			}
 		}

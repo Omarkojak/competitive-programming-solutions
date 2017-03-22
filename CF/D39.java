@@ -16,7 +16,7 @@ public class D39 {
 		int x2 = in.nextInt();
 		int y2 = in.nextInt();
 		int z2 = in.nextInt();
-		if(x1 != x2 && y1 != y2 && z1 != z2)
+		if (x1 != x2 && y1 != y2 && z1 != z2)
 			System.out.println("NO");
 		else
 			System.out.println("YES");

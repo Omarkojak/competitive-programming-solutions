@@ -38,7 +38,7 @@ public class A727 {
 		StringBuilder sb = new StringBuilder(f ? "YES\n" : "NO\n");
 		if (f) {
 			sb.append(st.size()).append("\n");
-			while(!st.isEmpty())
+			while (!st.isEmpty())
 				sb.append(st.pop() + " ");
 		}
 		System.out.println(sb);

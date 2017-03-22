@@ -12,7 +12,6 @@ public class C776 {
 
 	public static void main(String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);
-		StringBuilder sb = new StringBuilder();
 		int n = in.nextInt();
 		long k = in.nextInt();
 		long cnt = 0;
@@ -22,16 +21,16 @@ public class C776 {
 			cum[i] = cum[i - 1] + x;
 		}
 		ArrayList<Long> nums = new ArrayList<>();
-		if(Math.abs(k) == 1){
+		if (Math.abs(k) == 1) {
 			nums.add(1L);
-			if(k == -1)
+			if (k == -1)
 				nums.add(-1L);
-		}else{
-			for(long i=1;i<=(long) 1e15;i*=k)
+		} else {
+			for (long i = 1; i <= (long) 1e15; i *= k)
 				nums.add(i);
 		}
-		
-		for(long acc:nums) {
+
+		for (long acc : nums) {
 			HashMap<Long, Integer> count = new HashMap();
 			count.put(0l, 1);
 

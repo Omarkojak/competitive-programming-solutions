@@ -53,11 +53,11 @@ public class C766 {
 			int j = i;
 			for (; j < n; j++) {
 				boolean f = false;
-				for(int k=0;k<26;k++)
-					if(exist[k] && cnt[k] < j - i + 1)
+				for (int k = 0; k < 26; k++)
+					if (exist[k] && cnt[k] < j - i + 1)
 						f = true;
-					
-				if(cnt[s[j] - 'a'] < j - i + 1 || f)
+
+				if (cnt[s[j] - 'a'] < j - i + 1 || f)
 					break;
 				exist[s[j] - 'a'] = true;
 			}

@@ -45,18 +45,17 @@ public class A744 {
 				}
 			}
 
-		for (int i = 0; i < n; i++){
+		for (int i = 0; i < n; i++) {
 			boolean f = true;
-			for(int j=0;j<n;j++)
-				if(gov[j] && uf.isSameSet(i, j))
+			for (int j = 0; j < n; j++)
+				if (gov[j] && uf.isSameSet(i, j))
 					f = false;
-			if(f){
+			if (f) {
 				ans += uf.sizeOfSet(i) * uf.sizeOfSet(node);
 				uf.unionSet(i, node);
 			}
 		}
 
-			
 		System.out.println(ans);
 
 	}

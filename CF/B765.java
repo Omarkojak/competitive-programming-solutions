@@ -15,13 +15,13 @@ public class B765 {
 		boolean[] passed = new boolean[26];
 		char curr = 'a';
 		for (int i = 0; i < s.length; i++) {
-			if(s[i] != curr && !passed[s[i] - 'a'])
+			if (s[i] != curr && !passed[s[i] - 'a'])
 				f = false;
-			if(s[i] == curr)
+			if (s[i] == curr)
 				curr++;
 			passed[s[i] - 'a'] = true;
 		}
-		System.out.println(f?"YES" :"NO");
+		System.out.println(f ? "YES" : "NO");
 	}
 
 	static class Scanner {

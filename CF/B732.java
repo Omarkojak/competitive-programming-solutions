@@ -17,16 +17,16 @@ public class B732 {
 			arr[i] = in.nextInt();
 		int ans = 0;
 		for (int i = 1; i < n; i++) {
-			if(arr[i] + arr[i -1] < k){
-				int over = k - (arr[i] + arr[i -1]);
-				ans+=over;
-				arr[i]+=over;
+			if (arr[i] + arr[i - 1] < k) {
+				int over = k - (arr[i] + arr[i - 1]);
+				ans += over;
+				arr[i] += over;
 			}
 		}
 		StringBuilder sb = new StringBuilder();
-		for(int i=0;i<n;i++){
+		for (int i = 0; i < n; i++) {
 			sb.append(arr[i]);
-			if(i != n-1)
+			if (i != n - 1)
 				sb.append(" ");
 		}
 		System.out.println(ans);

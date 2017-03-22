@@ -15,7 +15,7 @@ public class B776 {
 
 	public static void sieve(long max) {
 		isPrime[0] = isPrime[1] = false;
-		
+
 		for (long i = 2; i <= max; i++) {
 			if (isPrime[(int) i]) {
 
@@ -35,18 +35,16 @@ public class B776 {
 		Arrays.fill(isPrime, true);
 		sieve(n + 5);
 		int cnt = 1;
-		for(int i=2;i<=n+1;i++)
-			if(isPrime[i]){
+		for (int i = 2; i <= n + 1; i++)
+			if (isPrime[i]) {
 				sb.append("1 ");
-			}else{
+			} else {
 				sb.append("2 ");
 				cnt = 2;
 			}
-	
+
 		System.out.println(cnt);
 		System.out.println(sb);
-		
-		
 
 	}
 

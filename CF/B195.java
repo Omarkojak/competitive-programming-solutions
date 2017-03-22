@@ -41,7 +41,8 @@ public class B195 {
 			if (balls != b.balls)
 				return balls - b.balls;
 			if (Math.abs(mid - pos) != Math.abs(mid - b.pos))
-				return Double.compare(Math.abs(mid - pos), Math.abs(mid - b.pos));
+				return Double.compare(Math.abs(mid - pos),
+						Math.abs(mid - b.pos));
 			return pos - b.pos;
 		}
 	}

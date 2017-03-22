@@ -20,7 +20,7 @@ public class B731 {
 			if (a[i] < 0)
 				f = false;
 		}
-		if(f & a[n-1] >=0 && (a[n-1] & 1) == 0)
+		if (f & a[n - 1] >= 0 && (a[n - 1] & 1) == 0)
 			System.out.println("YES");
 		else
 			System.out.println("NO");

@@ -38,11 +38,11 @@ public class B551 {
 			if (c1 == 0 && c2 == 0)
 				break;
 			if (c1 > c2) {
-				for(int i=0;i<b.length();i++)
+				for (int i = 0; i < b.length(); i++)
 					cnta[b.charAt(i) - 'a']--;
 				sb.append(b);
 			} else {
-				for(int i=0;i<c.length();i++)
+				for (int i = 0; i < c.length(); i++)
 					cnta[c.charAt(i) - 'a']--;
 				sb.append(c);
 			}

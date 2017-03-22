@@ -40,11 +40,11 @@ public class D4 {
 				k = i;
 			}
 		}
-		while(k != 0){
+		while (k != 0) {
 			st.add(as2.get(k).idx);
 			k = p[k];
 		}
-		
+
 		return max;
 	}
 
@@ -68,8 +68,8 @@ public class D4 {
 		System.out.println(lis());
 		if (st.size() > 0) {
 			StringBuilder sb = new StringBuilder();
-			while(!st.isEmpty())
-				sb.append(st.pop() + 1).append((st.size() == 0)? "\n":" ");
+			while (!st.isEmpty())
+				sb.append(st.pop() + 1).append((st.size() == 0) ? "\n" : " ");
 			System.out.print(sb);
 		}
 

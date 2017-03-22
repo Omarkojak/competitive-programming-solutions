@@ -14,20 +14,20 @@ public class B766 {
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt();
 		ArrayList<Integer> as = new ArrayList<>();
-		for(int i=0;i<n;i++)
+		for (int i = 0; i < n; i++)
 			as.add(in.nextInt());
 		Collections.sort(as);
 		int idx = 0;
-		while(idx<n - 2){
-			if(as.get(idx) + as.get(idx + 1) > as.get(idx + 2))
+		while (idx < n - 2) {
+			if (as.get(idx) + as.get(idx + 1) > as.get(idx + 2))
 				break;
 			idx++;
 		}
-		if(idx == n - 2)
+		if (idx == n - 2)
 			System.out.println("NO");
 		else
 			System.out.println("YES");
-		
+
 	}
 
 	static class Scanner {

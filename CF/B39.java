@@ -12,7 +12,7 @@ public class B39 {
 		Scanner in = new Scanner(System.in);
 		StringBuilder sb = new StringBuilder();
 
-		int n = in.nextInt(), num = 1, cnt=0;
+		int n = in.nextInt(), num = 1, cnt = 0;
 		for (int i = 1; i <= n; i++) {
 			if (in.nextInt() == num) {
 				cnt++;
@@ -20,9 +20,9 @@ public class B39 {
 				sb.append((2000 + i) + " ");
 			}
 		}
-		
+
 		System.out.println(cnt);
-		if(cnt != 0)
+		if (cnt != 0)
 			System.out.println(sb);
 
 	}

@@ -13,40 +13,39 @@ public class C379 {
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt();
 		Pair[] arr = new Pair[n];
-		for(int i=0;i<n;i++)
+		for (int i = 0; i < n; i++)
 			arr[i] = new Pair(i, in.nextLong());
 		Arrays.sort(arr);
-		long[]ans = new long[n];
+		long[] ans = new long[n];
 		ans[arr[0].idx] = arr[0].val;
-		for(int i=1;i<n;i++){
-			if(arr[i].val <= arr[i - 1].val)
-				arr[i].val = arr[i- 1].val + 1;
+		for (int i = 1; i < n; i++) {
+			if (arr[i].val <= arr[i - 1].val)
+				arr[i].val = arr[i - 1].val + 1;
 			ans[arr[i].idx] = arr[i].val;
 		}
 		StringBuilder sb = new StringBuilder();
-		for(int i=0;i<n;i++)
+		for (int i = 0; i < n; i++)
 			sb.append(ans[i] + " ");
 		System.out.println(sb);
-		
-		
-		
-		
+
 	}
-	
-	static class Pair implements Comparable<Pair>{
+
+	static class Pair implements Comparable<Pair> {
 		long val;
 		int idx;
-		Pair(int x, long y){
+
+		Pair(int x, long y) {
 			idx = x;
 			val = y;
 		}
+
 		@Override
 		public int compareTo(Pair o) {
-			if(Long.compare(val, o.val) != 0)
+			if (Long.compare(val, o.val) != 0)
 				return Long.compare(val, o.val);
 			return idx - o.idx;
 		}
-		
+
 	}
 
 	static class Scanner {

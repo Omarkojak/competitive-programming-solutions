@@ -8,8 +8,7 @@ import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class B381 {
-	
-	
+
 	public static void main(String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);
 		StringBuilder sb = new StringBuilder();
@@ -23,7 +22,7 @@ public class B381 {
 		}
 		int c = 0;
 		Stack<Integer> st = new Stack<>();
-		for (int i = 0; i < cnt.length; i++) 
+		for (int i = 0; i < cnt.length; i++)
 			if (cnt[i] > 0) {
 				cnt[i]--;
 				c++;
@@ -33,11 +32,10 @@ public class B381 {
 					st.add(i);
 				}
 			}
-		while(!st.isEmpty())
+		while (!st.isEmpty())
 			sb.append(st.pop() + " ");
 		System.out.println(c);
 		System.out.println(sb);
-		
 
 	}
 

@@ -26,15 +26,15 @@ public class D208 {
 
 		for (int i = 0; i < n; i++) {
 			sum += arr[i];
-			for (int j = 4; j >= 0; j--){
+			for (int j = 4; j >= 0; j--) {
 				Pair p = as.get(j);
 				quan[p.idx] += sum / p.val;
 				sum -= (sum / p.val) * p.val;
 			}
 		}
 		StringBuilder sb = new StringBuilder();
-		for(int i=0;i<5;i++)
-			sb.append(quan[i]).append(i == 4? "\n":" ");
+		for (int i = 0; i < 5; i++)
+			sb.append(quan[i]).append(i == 4 ? "\n" : " ");
 		sb.append(sum);
 		System.out.println(sb);
 

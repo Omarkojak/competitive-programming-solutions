@@ -18,8 +18,8 @@ public class A768 {
 			as.add(in.nextInt());
 		Collections.sort(as);
 		int ans = 0;
-		for(int i=1;i<n-1;i++)
-			if(as.get(i) > as.get(0) && as.get(i) < as.get(n - 1))
+		for (int i = 1; i < n - 1; i++)
+			if (as.get(i) > as.get(0) && as.get(i) < as.get(n - 1))
 				ans++;
 		System.out.println(ans);
 	}

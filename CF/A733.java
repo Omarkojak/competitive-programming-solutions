@@ -14,8 +14,8 @@ public class A733 {
 		int last = 0;
 		int max = 0;
 		for (int i = 1; i <= s.length; i++) {
-			if (s[i - 1] == 'A' || s[i - 1] == 'O' || s[i - 1] == 'E' || s[i - 1] == 'I'
-					|| s[i - 1] == 'U' || s[i - 1] == 'Y') {
+			if (s[i - 1] == 'A' || s[i - 1] == 'O' || s[i - 1] == 'E'
+					|| s[i - 1] == 'I' || s[i - 1] == 'U' || s[i - 1] == 'Y') {
 				max = Math.max(max, i - last);
 				last = i;
 			}

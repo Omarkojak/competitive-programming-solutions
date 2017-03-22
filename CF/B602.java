@@ -24,7 +24,7 @@ public class B602 {
 			while (r < n) {
 				int max = Math.max(arr[r], ts.last());
 				int min = Math.min(arr[r], ts.first());
-				if(max - min > 1)
+				if (max - min > 1)
 					break;
 				ts.add(arr[r]);
 				cnt[arr[r]]++;
@@ -32,7 +32,7 @@ public class B602 {
 			}
 			res = Math.max(res, r - l);
 			cnt[arr[l]]--;
-			if(cnt[arr[l]] == 0)
+			if (cnt[arr[l]] == 0)
 				ts.remove(arr[l]);
 		}
 		System.out.println(res);

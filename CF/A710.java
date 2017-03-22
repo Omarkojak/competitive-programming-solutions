@@ -13,39 +13,44 @@ public class A710 {
 		String s = in.nextLine();
 		int col = s.charAt(0) - 'a' + 1;
 		int row = s.charAt(1) - '0';
-		if(col > 1 && col < 8 && row > 1 && row < 8 )
-		{
+		if (col > 1 && col < 8 && row > 1 && row < 8) {
 			System.out.println(8);
 			return;
 		}
-		if((row == 8 && col == 8) || (row == 8 && col == 1) || (row == 1 && col == 1) || (row == 1 && col == 8))
-		{
+		if ((row == 8 && col == 8) || (row == 8 && col == 1)
+				|| (row == 1 && col == 1) || (row == 1 && col == 8)) {
 			System.out.println(3);
 			return;
 
 		}
 		System.out.println(5);
-	
 
 	}
-	static class Scanner 
-	{
+
+	static class Scanner {
 		StringTokenizer st;
 		BufferedReader br;
-		
-		public Scanner(InputStream s){	br = new BufferedReader(new InputStreamReader(s));}
 
-		public String next() throws IOException 
-		{
-			while (st == null || !st.hasMoreTokens()) 
+		public Scanner(InputStream s) {
+			br = new BufferedReader(new InputStreamReader(s));
+		}
+
+		public String next() throws IOException {
+			while (st == null || !st.hasMoreTokens())
 				st = new StringTokenizer(br.readLine());
 			return st.nextToken();
 		}
 
-		public int nextInt() throws IOException {return Integer.parseInt(next());}
-		
-		public long nextLong() throws IOException {return Long.parseLong(next());}
+		public int nextInt() throws IOException {
+			return Integer.parseInt(next());
+		}
 
-		public String nextLine() throws IOException {return br.readLine();}
+		public long nextLong() throws IOException {
+			return Long.parseLong(next());
+		}
+
+		public String nextLine() throws IOException {
+			return br.readLine();
+		}
 	}
 }

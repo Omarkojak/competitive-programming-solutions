@@ -18,46 +18,44 @@ public class B762 {
 		ArrayList<Integer> usb = new ArrayList<>();
 		ArrayList<Integer> ps = new ArrayList<>();
 		int n = in.nextInt();
-		for(int i=0;i<n;i++){
+		for (int i = 0; i < n; i++) {
 			int cost = in.nextInt();
-			if(in.next().equals("USB"))
+			if (in.next().equals("USB"))
 				usb.add(cost);
 			else
 				ps.add(cost);
-				
+
 		}
-		
+
 		Collections.sort(usb);
 		Collections.sort(ps);
 		long ans = 0;
 		int cnt = 0;
-		for(int i=0;i<Math.min(a,  usb.size());i++){
+		for (int i = 0; i < Math.min(a, usb.size()); i++) {
 			cnt++;
-			ans += (long)usb.get(i);
+			ans += (long) usb.get(i);
 		}
-		for(int i=0;i<Math.min(b,  ps.size());i++){
+		for (int i = 0; i < Math.min(b, ps.size()); i++) {
 			cnt++;
-			ans += (long)ps.get(i);
+			ans += (long) ps.get(i);
 		}
 		ArrayList<Integer> as = new ArrayList<>();
-		
-		for(int j=a;j<usb.size();j++)
+
+		for (int j = a; j < usb.size(); j++)
 			as.add(usb.get(j));
-		
-		for(int j=b;j<ps.size();j++)
+
+		for (int j = b; j < ps.size(); j++)
 			as.add(ps.get(j));
-		
+
 		Collections.sort(as);
-		
-		for(int i=0;i<Math.min(c,  as.size());i++){
+
+		for (int i = 0; i < Math.min(c, as.size()); i++) {
 			cnt++;
-			ans += (long)as.get(i);
+			ans += (long) as.get(i);
 		}
 		System.out.println(cnt + " " + ans);
-		
-		
+
 	}
-	
 
 	static class Scanner {
 		StringTokenizer st;

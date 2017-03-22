@@ -1,4 +1,5 @@
 package CF;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,13 +36,9 @@ public class E717 {
 					return;
 				out.print((u + 1) + " ");
 				color[u] ^= 1;
-				
-			} 
-			
-			
 
+			}
 		}
-		
 	}
 
 	public static void main(String[] args) throws IOException {

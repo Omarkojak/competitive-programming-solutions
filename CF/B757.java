@@ -22,9 +22,9 @@ public class B757 {
 				int cnt = 0;
 				if (mp.containsKey(i))
 					cnt += mp.get(i);
-				for (int j = i * 2; j <= larg; j+=i) {
+				for (int j = i * 2; j <= larg; j += i) {
 					vis[j] = true;
-					if(mp.containsKey(j))
+					if (mp.containsKey(j))
 						cnt += mp.get(j);
 				}
 				max = Math.max(max, cnt);

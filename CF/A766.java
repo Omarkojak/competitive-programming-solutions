@@ -12,13 +12,13 @@ public class A766 {
 		Scanner in = new Scanner(System.in);
 		String a = in.nextLine();
 		String b = in.nextLine();
-		if(a.length() != b.length()){
+		if (a.length() != b.length()) {
 			System.out.println(Math.max(a.length(), b.length()));
 			return;
 		}
-		if(a.equals(b)){
+		if (a.equals(b)) {
 			System.out.println(-1);
-		}else
+		} else
 			System.out.println(a.length());
 
 	}

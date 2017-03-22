@@ -17,36 +17,36 @@ public class C731 {
 		int m = in.nextInt();
 		in.nextInt();
 		int color[] = new int[n];
-		for(int i=0;i<n;i++)
+		for (int i = 0; i < n; i++)
 			color[i] = in.nextInt();
 		UnionFind uf = new UnionFind(n);
-		while(m-->0)
+		while (m-- > 0)
 			uf.unionSet(in.nextInt() - 1, in.nextInt() - 1);
-		
+
 		ArrayList<Integer>[] sets = new ArrayList[n];
-		for(int i=0;i<n;i++)
+		for (int i = 0; i < n; i++)
 			sets[i] = new ArrayList<Integer>();
-		for(int i=0;i<n;i++)
+		for (int i = 0; i < n; i++)
 			sets[uf.findSet(i)].add(i);
 		int ans = 0;
-		for(int i=0;i<n;i++){
-			if(sets[i].size() == 0)
+		for (int i = 0; i < n; i++) {
+			if (sets[i].size() == 0)
 				continue;
 			TreeMap<Integer, Integer> cnt = new TreeMap<>();
-			for(int u:sets[i]){
+			for (int u : sets[i]) {
 				int c = 0;
-				if(cnt.containsKey(color[u]))
+				if (cnt.containsKey(color[u]))
 					c = cnt.get(color[u]);
 				cnt.put(color[u], c + 1);
 			}
 			int max = 0;
-			for(Entry<Integer, Integer> e: cnt.entrySet())
+			for (Entry<Integer, Integer> e : cnt.entrySet())
 				max = Math.max(max, e.getValue());
 			ans += sets[i].size() - max;
 		}
 		System.out.println(ans);
 	}
-	
+
 	static class UnionFind {
 		int[] p, rank, setSize;
 		int numSets;
@@ -93,7 +93,6 @@ public class C731 {
 			return setSize[findSet(i)];
 		}
 	}
-
 
 	static class Scanner {
 		StringTokenizer st;

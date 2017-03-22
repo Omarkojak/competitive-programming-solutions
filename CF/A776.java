@@ -18,7 +18,7 @@ public class A776 {
 		for (int i = 0; i < n; i++) {
 			String k1 = in.next();
 			String k2 = in.next();
-			if(k1.equals(s1))
+			if (k1.equals(s1))
 				s1 = k2;
 			else
 				s2 = k2;

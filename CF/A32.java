@@ -17,10 +17,10 @@ public class A32 {
 		for (int i = 0; i < n; i++)
 			arr[i] = in.nextInt();
 
-		for (int i = 0; i < n; i++) 
-			for(int j=i+1;j<n;j++)
-				if(Math.abs(arr[i] - arr[j]) <= d)
-					ans+=2;
+		for (int i = 0; i < n; i++)
+			for (int j = i + 1; j < n; j++)
+				if (Math.abs(arr[i] - arr[j]) <= d)
+					ans += 2;
 
 		System.out.println(ans);
 	}

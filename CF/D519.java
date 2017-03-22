@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
 
@@ -24,14 +23,15 @@ public class D519 {
 		for (int i = 0; i < 26; i++)
 			arr[i] = new TreeMap<>();
 		for (int i = 1; i <= n; i++) {
-			Long cnt1 = arr[s[i - 1] - 'a'].get(sum[i - 1] - val[s[i - 1] - 'a']);
-			res += cnt1 == null? 0: cnt1;
+			Long cnt1 = arr[s[i - 1] - 'a'].get(sum[i - 1]
+					- val[s[i - 1] - 'a']);
+			res += cnt1 == null ? 0 : cnt1;
 			long cnt = 0;
 			if (arr[s[i - 1] - 'a'].containsKey(sum[i - 1]))
 				cnt = arr[s[i - 1] - 'a'].get(sum[i - 1]);
 			arr[s[i - 1] - 'a'].put(sum[i - 1], cnt + 1);
 			sum[i] = sum[i - 1] + val[s[i - 1] - 'a'];
-		}			
+		}
 		System.out.println(res);
 
 	}

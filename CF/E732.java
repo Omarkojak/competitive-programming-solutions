@@ -38,8 +38,6 @@ public class E732 {
 				}
 				if (curr <= 1)
 					break;
-				// if ((curr & 1) != 0)
-				// ++curr;
 				curr = (curr + 1) >> 1;
 				cnt++;
 			}

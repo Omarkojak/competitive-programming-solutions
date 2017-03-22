@@ -56,7 +56,7 @@ public class C725 {
 				col = 0;
 				row = 0;
 			}
-			if(j == p2)
+			if (j == p2)
 				continue;
 			res[row][col] = s[j];
 			if (row == 0)
