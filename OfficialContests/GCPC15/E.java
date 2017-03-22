@@ -11,13 +11,13 @@ import java.util.StringTokenizer;
 
 public class E {
 	static int V;
-	static long []dp;
+	static long[] dp;
 	static ArrayList<Edge>[] adjList;
 	static final int inf = (int) 1e9;
 	static ArrayList<Integer> parent[];
 
 	static void dijkstra() {
-		int []dist = new int[V];
+		int[] dist = new int[V];
 		PriorityQueue<Edge> pq = new PriorityQueue<>();
 		Arrays.fill(dist, inf);
 		dist[0] = 0;
@@ -37,7 +37,7 @@ public class E {
 			}
 		}
 	}
-	
+
 	public static long dfs2(int u) {
 		if (u == 0)
 			return 1l;
@@ -47,22 +47,22 @@ public class E {
 			return dp[u] = 0l;
 
 		long cnt = 0;
-		for (int v : parent[u]){
+		for (int v : parent[u]) {
 			cnt += dfs2(v);
-			if(cnt > 2)
-			    cnt = 2;
+			if (cnt > 2)
+				cnt = 2;
 		}
 
 		return dp[u] = cnt;
 	}
 
 	public static boolean dfs(int u) {
-		if(parent[u] == null || u == 0 || parent[u].size() == 0)
+		if (parent[u] == null || u == 0 || parent[u].size() == 0)
 			return false;
 
-		if(parent[u].size() > 1)
+		if (parent[u].size() > 1)
 			return true;
-		
+
 		return dfs(parent[u].get(0));
 	}
 

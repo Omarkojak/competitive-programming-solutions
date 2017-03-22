@@ -25,8 +25,8 @@ public class Uva10325_TheLottery {
 			String s = in.nextLine();
 			if (s == null || s.length() == 0)
 				break;
-			
-			StringTokenizer ns =new StringTokenizer(s);
+
+			StringTokenizer ns = new StringTokenizer(s);
 			Long N = Long.parseLong(ns.nextToken());
 			int m = Integer.parseInt(ns.nextToken());
 			int[] arr = new int[m];
@@ -35,15 +35,14 @@ public class Uva10325_TheLottery {
 			long divis = 0;
 			for (int i = 1; i < (1 << m); i++) {
 				long lcm = 1;
-				for(int j=0;j<m;j++)
-					if(((1<<j) & i) != 0)
+				for (int j = 0; j < m; j++)
+					if (((1 << j) & i) != 0)
 						lcm = LCM(lcm, arr[j]);
-				
-				if((Integer.bitCount(i) & 1) == 0)
-					divis -= (N/lcm);
+
+				if ((Integer.bitCount(i) & 1) == 0)
+					divis -= (N / lcm);
 				else
-					divis += (N/lcm);
-			//	System.err.println(lcm + "  " + divis + "  " + i);
+					divis += (N / lcm);
 			}
 			sb.append(N - divis).append("\n");
 

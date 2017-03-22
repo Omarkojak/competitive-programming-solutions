@@ -1,4 +1,5 @@
 package OfficialContests.BAPC2013;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -86,7 +87,7 @@ public class G {
 				ds.Union(i, n);
 			if (c[i].dist(c[i].x, c[i].y, width, c[i].y) - c[i].r <= mid)
 				ds.Union(i, n + 1);
-			if(ds.isSameSet(n, n + 1))
+			if (ds.isSameSet(n, n + 1))
 				return false;
 		}
 		return !ds.isSameSet(n, n + 1);
@@ -94,7 +95,6 @@ public class G {
 
 	static double BinarySearch(Circle[] c, double width) {
 		double low = 0.0, high = width / 2;
-		int cnt = 0;
 		while (Math.abs(high - low) > EPS) {
 			double mid = (low + high) / 2.0;
 			if (check(c, width, mid)) {
@@ -105,7 +105,7 @@ public class G {
 		return low;
 	}
 
- 	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 		MyScanner sc = new MyScanner(System.in);
 		PrintWriter out = new PrintWriter(System.out);
 		int t = sc.nextInt();

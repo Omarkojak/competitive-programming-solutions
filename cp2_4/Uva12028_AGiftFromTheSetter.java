@@ -38,10 +38,8 @@ public class Uva12028_AGiftFromTheSetter {
 			shuffle(arr);
 			Arrays.sort(arr);
 			SegmentTree st = new SegmentTree(arr);
-		//	System.err.println(Arrays.toString(arr));
 			long ans = 0;
 			for (int i = n - 1; i > 0; i--) {
-			//	System.err.println(arr[i] + "  " + st.query(0, i - 1));
 				ans += i * arr[i] - st.query(0, i - 1);
 			}
 

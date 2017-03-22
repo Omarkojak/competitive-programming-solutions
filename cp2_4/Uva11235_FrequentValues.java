@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
 
@@ -46,12 +45,7 @@ public class Uva11235_FrequentValues {
 					Interval[i][0] = Interval[i-1][0];
 					Interval[i][1] = Interval[i-1][1];
 				}
-			}	
-			//System.out.println(mp.toString());
-			
-			/*for(int i=0;i<n;i++)
-				System.out.println(Interval[i][0]+" "+Interval[i][1]);*/
-			
+			}				
 			for(int i=0;i<n;i++)
 				a[i] = mp.get(a[i]);
 			
@@ -73,7 +67,6 @@ public class Uva11235_FrequentValues {
 				
 				int maxinbetween = val;	//max of the interval in between idx 1 and idx 2 
 				int max = Math.max(Interval[idx1][1] - idx1 +1, idx2 - Interval[idx2][0] +1);	// max of the intervals on the left and right side
-				//System.out.println(maxinbetween+" "+max);
 				sb.append(Math.max(max, maxinbetween)).append("\n");
 			}
 			n=in.nextInt();

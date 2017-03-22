@@ -8,10 +8,9 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class D {
-	
-	public static int ceil(int max, int k)
-	{
-		return max / k + ((max % k == 0)? 0:1);
+
+	public static int ceil(int max, int k) {
+		return max / k + ((max % k == 0) ? 0 : 1);
 	}
 
 	public static void main(String[] args) throws IOException {

@@ -1,4 +1,5 @@
 package OfficialContests.SamaraVIII;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,18 +26,18 @@ public class A {
 			else
 				return -inf;
 		}
-		
-		if(dp[taken][w+offset][idx] != -1)
-			return dp[taken][w+offset][idx];
-		
-		long takeadd = arr[idx].p + solve(taken - 1, idx + 1, w - arr[idx].w + arr[idx].d);
+
+		if (dp[taken][w + offset][idx] != -1)
+			return dp[taken][w + offset][idx];
+
+		long takeadd = arr[idx].p
+				+ solve(taken - 1, idx + 1, w - arr[idx].w + arr[idx].d);
 		long take = arr[idx].p + solve(taken, idx + 1, w - arr[idx].w);
 		long leave = solve(taken, idx + 1, w);
-	
+
 		long max = Math.max(takeadd, Math.max(take, leave));
-		
-		return dp[taken][w+offset][idx] = max;
-		
+
+		return dp[taken][w + offset][idx] = max;
 
 	}
 

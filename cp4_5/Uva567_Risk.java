@@ -33,7 +33,7 @@ public class Uva567_Risk {
 		Scanner in = new Scanner(System.in);
 		PrintWriter out = new PrintWriter(System.out);
 		int cse = 1;
-	//	int t = 2;
+		// int t = 2;
 		while (in.br.ready()) {
 			adjMatrix = new boolean[20][20];
 			for (int i = 0; i < 19; i++) {

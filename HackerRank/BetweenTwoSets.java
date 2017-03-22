@@ -23,14 +23,14 @@ public class BetweenTwoSets {
 		int cnt = 0;
 		for (int x = 1; x <= 100; x++) {
 			boolean f = true;
-			for(int i=0;i<n;i++)
-				if(x % a[i] != 0)
+			for (int i = 0; i < n; i++)
+				if (x % a[i] != 0)
 					f = false;
-			
-			for(int j=0;j<m;j++)
-				if(b[j] % x != 0)
+
+			for (int j = 0; j < m; j++)
+				if (b[j] % x != 0)
 					f = false;
-			if(f)
+			if (f)
 				cnt++;
 		}
 		System.out.println(cnt);

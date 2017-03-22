@@ -20,24 +20,21 @@ public class Uva1056_DegreesOfSeparation {
 			Arrays.fill(dist[i], inf);
 			dist[i][i] = 0;
 		}
-		
-		for(int i=0;i<P;i++)
-			for(int j=0;j<P;j++)
-				if(adjMatrix[i][j])
+
+		for (int i = 0; i < P; i++)
+			for (int j = 0; j < P; j++)
+				if (adjMatrix[i][j])
 					dist[i][j] = 1;
-		for(int k=0;k<P;k++)
-			for(int i=0;i<P;i++)
-				for(int j=0;j<P;j++)
+		for (int k = 0; k < P; k++)
+			for (int i = 0; i < P; i++)
+				for (int j = 0; j < P; j++)
 					dist[i][j] = Math.min(dist[i][j], dist[i][k] + dist[k][j]);
 		int max = 0;
-		for(int i=0;i<P;i++)
-			for(int j=0;j<P;j++)
+		for (int i = 0; i < P; i++)
+			for (int j = 0; j < P; j++)
 				max = Math.max(max, dist[i][j]);
 		return max;
 	}
-	
-
-
 
 	public static void main(String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);

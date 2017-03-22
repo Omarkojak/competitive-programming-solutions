@@ -14,13 +14,13 @@ public class I {
 		int t = in.nextInt();
 		while (t-- > 0) {
 			int n = in.nextInt();
-			int arr[]=new int [n];
-			for(int i=0;i<n;i++)
+			int arr[] = new int[n];
+			for (int i = 0; i < n; i++)
 				arr[i] = in.nextInt();
-			
+
 			int max = 0;
-			for(int i=0;i<n;i++)
-				for(int j=i+1;j<n;j++)
+			for (int i = 0; i < n; i++)
+				for (int j = i + 1; j < n; j++)
 					max = Math.max(max, Integer.bitCount(arr[i] ^ arr[j]));
 			sb.append(max).append("\n");
 		}

@@ -9,17 +9,17 @@ import java.util.StringTokenizer;
 
 public class K {
 	static int s[], p, n;
-	//WA
+
 	static long solve() {
 		int last[] = new int[p];
 		long cnt = 0l;
 		for (int i = 0; i < n; i++) {
-			int []curr = new int[p];
-			curr[s[i]%p]++;
-			for(int mod=0;mod<p;mod++){
-				curr[(mod*10 + s[i])%p] += last[mod];
+			int[] curr = new int[p];
+			curr[s[i] % p]++;
+			for (int mod = 0; mod < p; mod++) {
+				curr[(mod * 10 + s[i]) % p] += last[mod];
 			}
-			cnt+=curr[0];
+			cnt += curr[0];
 			last = curr;
 		}
 
@@ -35,11 +35,11 @@ public class K {
 			long b = in.nextLong();
 			n = in.nextInt();
 			s = new int[n];
-			//String inp = ((a * 1.0) / b) + "";
+			// String inp = ((a * 1.0) / b) + "";
 			BigDecimal ans = BigDecimal.valueOf(a * 1.0);
 			ans = ans.divide(BigDecimal.valueOf(b));
 			String inp = ans.toPlainString();
-//			System.err.println(inp);
+			// System.err.println(inp);
 			boolean first = true;
 			for (int i = 0, j = 0; i < inp.length() && j < n; i++) {
 				if (inp.charAt(i) == '.' || (inp.charAt(i) == '0' && first))
@@ -49,8 +49,6 @@ public class K {
 				j++;
 			}
 			p = in.nextInt();
-			// System.err.println(inp);
-			// System.err.println(Arrays.toString(s));
 			sb.append(solve()).append("\n");
 		}
 		System.out.print(sb);

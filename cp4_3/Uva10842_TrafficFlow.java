@@ -23,7 +23,7 @@ public class Uva10842_TrafficFlow {
 			if (visited[cur.to])
 				continue;
 			visited[cur.to] = true;
-			if(cur.cost != 0)
+			if (cur.cost != 0)
 				min = Math.min(min, cur.cost);
 			for (Edge nxt : adjList[cur.to])
 				if (!visited[nxt.to])
@@ -66,9 +66,9 @@ public class Uva10842_TrafficFlow {
 		}
 
 		public int compareTo(Edge e) {
-			if(cost > e.cost)
+			if (cost > e.cost)
 				return -1;
-			if(cost < e.cost)
+			if (cost < e.cost)
 				return 1;
 			return to - e.to;
 		}

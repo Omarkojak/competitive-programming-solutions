@@ -13,22 +13,22 @@ import java.util.StringTokenizer;
 public class H {
 
 	public static void main(String[] args) throws IOException {
-//		Scanner in = new Scanner(System.in);
-//		PrintWriter out = new PrintWriter(System.out);
+		// Scanner in = new Scanner(System.in);
+		// PrintWriter out = new PrintWriter(System.out);
 		Scanner in = new Scanner(new File("hash.in"));
 		PrintWriter out = new PrintWriter("hash.out");
 		StringBuilder res = new StringBuilder();
 		int k = in.nextInt();
 		// zero = "ed" one = "fE"
 		int upper = (int) (Math.ceil(Math.log(k) / Math.log(2)));
-		for (int i = 0; i < (1 << upper) && i < k; i++){
+		for (int i = 0; i < (1 << upper) && i < k; i++) {
 			StringBuilder sb = new StringBuilder();
-			for(int j=0;j<upper;j++)
-				if((i & (1<<j)) == 0)
+			for (int j = 0; j < upper; j++)
+				if ((i & (1 << j)) == 0)
 					sb.append("ed");
 				else
 					sb.append("fE");
-			
+
 			res.append(sb).append("\n");
 		}
 		out.print(res);

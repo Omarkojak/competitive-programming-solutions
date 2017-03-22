@@ -12,22 +12,22 @@ public class I {
 		Scanner in = new Scanner(System.in);
 		StringBuilder sb = new StringBuilder();
 		int t = in.nextInt();
-		while (t--> 0) {
-			char[]s1 = in.nextLine().toCharArray();
-			char[]s2 = in.nextLine().toCharArray();
+		while (t-- > 0) {
+			char[] s1 = in.nextLine().toCharArray();
+			char[] s2 = in.nextLine().toCharArray();
 
-			int []cnt1 = new int [26];
-			int []cnt2 = new int [26];
+			int[] cnt1 = new int[26];
+			int[] cnt2 = new int[26];
 
-			for(int i=0;i<s1.length;i++)
+			for (int i = 0; i < s1.length; i++)
 				cnt1[s1[i] - 'a']++;
 
-			for(int i=0;i<s2.length;i++)
+			for (int i = 0; i < s2.length; i++)
 				cnt2[s2[i] - 'a']++;
 
 			long cnt = 0;
-			for(int i=0;i<26;i++)
-				cnt+=Math.abs(cnt1[i] - cnt2[i]);
+			for (int i = 0; i < 26; i++)
+				cnt += Math.abs(cnt1[i] - cnt2[i]);
 			sb.append(cnt).append("\n");
 		}
 		System.out.print(sb);

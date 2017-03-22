@@ -20,14 +20,14 @@ public class H {
 			char[] s = bf.readLine().toCharArray();
 			int cnt = 0;
 			for (int i = 0; i < n; i++) {
-				if(s[i] == '0')
+				if (s[i] == '0')
 					cnt++;
 				else
 					cnt = 0;
-				if(cnt >= k)
+				if (cnt >= k)
 					f = true;
 			}
-			sb.append(f? "yes\n":"no\n");
+			sb.append(f ? "yes\n" : "no\n");
 		}
 		System.out.print(sb);
 	}

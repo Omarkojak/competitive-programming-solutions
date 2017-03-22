@@ -34,7 +34,7 @@ public class J {
 			int cnt = 0;
 			StringBuilder temp = new StringBuilder();
 			while (cnt < k && p1 < n && arr1[p1] == arr2[p2]) {
-				if(cnt == 0)
+				if (cnt == 0)
 					temp.append((p1 + 1));
 				else
 					temp.append(" " + (p1 + 1));

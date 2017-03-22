@@ -11,7 +11,8 @@ import java.util.StringTokenizer;
 
 public class Uva11324_TheLargestClique {
 	static ArrayList<Integer>[] adjList, DAG;
-	static int V, counter, SCC, dfs_num[], dfs_low[], SCC_size[], largest[], SCC_num[];
+	static int V, counter, SCC, dfs_num[], dfs_low[], SCC_size[], largest[],
+			SCC_num[];
 	static Stack<Integer> stack;
 
 	static void tarjanSCC() {
@@ -44,10 +45,10 @@ public class Uva11324_TheLargestClique {
 	}
 
 	public static int dfs(int u) {
-		if(largest[u] != 0)
+		if (largest[u] != 0)
 			return largest[u];
 		int ret = 0;
-		for(int v:DAG[u])
+		for (int v : DAG[u])
 			ret = Math.max(ret, dfs(v));
 		return largest[u] = ret + SCC_size[u];
 	}

@@ -46,7 +46,7 @@ public class NHAY {
 			match(s1, s2);
 			for (int k : as)
 				sb.append(k).append("\n");
-			if(as.size() == 0)
+			if (as.size() == 0)
 				sb.append("\n");
 
 		}

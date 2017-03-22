@@ -55,7 +55,7 @@ public class Uva10765_DovesAndBombs {
 		while (true) {
 			V = in.nextInt();
 			int m = in.nextInt();
-			if(start)
+			if (start)
 				sb.append("\n");
 			if (V == 0 && m == 0)
 				break;
@@ -85,22 +85,11 @@ public class Uva10765_DovesAndBombs {
 			findArtPointsAndBridges();
 			Collections.sort(as);
 			for (Output p : as) {
-				if(m == 0)
+				if (m == 0)
 					break;
 				sb.append(p.node + " " + p.pigeons).append("\n");
 				m--;
 			}
-			// PriorityQueue<Output> pq = new PriorityQueue<>();
-			// for (int i = 0; i < V; i++)
-			// if (artPoints[i])
-			// pq.add(new Output(adjList[i].size(), i));
-			// else
-			// pq.add(new Output(1, i));
-			// while (m-- > 0) {
-			// Output curr = pq.poll();
-			// sb.append(curr.node+ " " +curr.pigeons).append("\n");
-			// }
-
 		}
 		System.out.print(sb);
 	}

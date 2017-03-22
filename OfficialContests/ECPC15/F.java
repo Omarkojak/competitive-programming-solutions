@@ -15,7 +15,7 @@ public class F {
 		while (t-- > 0)
 			sb.append((in.nextInt() == in.nextInt()) ? "Square\n"
 					: "Rectangle\n");
-		
+
 		System.out.print(sb);
 	}
 

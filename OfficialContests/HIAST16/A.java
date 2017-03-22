@@ -20,11 +20,11 @@ public class A {
 			}
 			long cop = q;
 			int cnt = 0;
-			while (cop > 0 && cop %2 == 0) {
-				cop >>=1;
+			while (cop > 0 && cop % 2 == 0) {
+				cop >>= 1;
 				cnt++;
 			}
-			if(cnt %2 == 1)
+			if (cnt % 2 == 1)
 				sb.append("Second Box\n");
 			else
 				sb.append("First Box\n");

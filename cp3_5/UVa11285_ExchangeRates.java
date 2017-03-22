@@ -25,7 +25,7 @@ public class UVa11285_ExchangeRates {
 				A = Math.max(A, rata);
 				B = Math.max(B, ratb);
 			}
-			out.printf("%.2f\n", A/100.0);
+			out.printf("%.2f\n", A / 100.0);
 		}
 		out.flush();
 		out.close();

@@ -42,7 +42,6 @@ public class Uva1196_TilingUpBlocks {
 		return lis;
 	}
 
-
 	public static void main(String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);
 		StringBuilder sb = new StringBuilder();

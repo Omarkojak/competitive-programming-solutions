@@ -11,7 +11,7 @@ public class UVa1121_Subsequence {
 	public static void main(String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);
 		StringBuilder sb = new StringBuilder();
-		while (in.br.ready()){
+		while (in.br.ready()) {
 			int n = in.nextInt();
 			long S = in.nextLong();
 			int[] arr = new int[n];

@@ -42,7 +42,7 @@ public class Uva11463_Commandos {
 			int max = 0;
 			int source = in.nextInt();
 			int sink = in.nextInt();
-			for(int k=0;k<N;k++)
+			for (int k = 0; k < N; k++)
 				max = Math.max(max, adjMatrix[source][k] + adjMatrix[k][sink]);
 			out.printf("Case %d: %d\n", cse++, max);
 		}

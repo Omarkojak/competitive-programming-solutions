@@ -26,8 +26,7 @@ public class Uva10721_BarCodes {
 	public static void main(String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);
 		StringBuilder sb = new StringBuilder();
-		
-//		int t = 2;
+
 		while (in.br.ready()) {
 			n = in.nextInt(); // n bars
 			k = in.nextInt(); // k regions

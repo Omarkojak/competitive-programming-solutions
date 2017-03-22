@@ -15,7 +15,7 @@ public class J {
 		while (t-- > 0) {
 			int n = in.nextInt();
 			int m = in.nextInt();
-			long[] arr = new long[n+1];
+			long[] arr = new long[n + 1];
 			for (int i = 0; i < n; i++)
 				arr[i] = in.nextLong();
 			long[] acc = new long[n + 1];
@@ -24,19 +24,16 @@ public class J {
 				acc[in.nextInt() - 1] += in.nextLong();
 
 			for (int i = 0; i < n; i++) {
-				if(acc[i] > arr[i])
-				{
-					acc[i+1]+=acc[i]-arr[i];
-				}else
+				if (acc[i] > arr[i]) {
+					acc[i + 1] += acc[i] - arr[i];
+				} else
 					arr[i] = acc[i];
-					
-				
+
 			}
 			sb.append(acc[n]).append("\n");
-			for(int i=0;i<n;i++)
-			{
+			for (int i = 0; i < n; i++) {
 				sb.append(arr[i]);
-				if(i != n-1)
+				if (i != n - 1)
 					sb.append(" ");
 			}
 			sb.append("\n");

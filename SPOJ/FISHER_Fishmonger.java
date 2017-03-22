@@ -12,7 +12,7 @@ public class FISHER_Fishmonger {
 	static int time[][], toll[][];
 	static int n;
 	static final int inf = (int) 1e9;
-	static int min,ti;
+	static int min, ti;
 
 	public static void dijkstra(int tim) {
 		int dist[][] = new int[n][1005];
@@ -23,40 +23,33 @@ public class FISHER_Fishmonger {
 		dist[0][0] = 0;
 		pq.add(new Edge(0, 0, 0));
 
-		
 		min = inf;
 		ti = -1;
 		while (!pq.isEmpty()) {
 			Edge curr = pq.poll();
-			if(dist[curr.node][curr.t] < curr.c)
+			if (dist[curr.node][curr.t] < curr.c)
 				continue;
-			if(curr.node == n-1)
-			{
-				if(min > curr.c)
-				{
+			if (curr.node == n - 1) {
+				if (min > curr.c) {
 					min = Math.min(min, curr.c);
 					ti = curr.t;
-				}
-				else
-					if(min == curr.c)
-						ti = Math.min(ti, curr.t);
+				} else if (min == curr.c)
+					ti = Math.min(ti, curr.t);
 				continue;
 			}
-			
-			for(int i=0;i<n;i++)
-			{
-				if(i == curr.node)
+
+			for (int i = 0; i < n; i++) {
+				if (i == curr.node)
 					continue;
 				int timeneed = curr.t + time[curr.node][i];
-				if(timeneed <= tim)
-					if(dist[i][timeneed] > curr.c + toll[curr.node][i])
-					{
+				if (timeneed <= tim)
+					if (dist[i][timeneed] > curr.c + toll[curr.node][i]) {
 						dist[i][timeneed] = curr.c + toll[curr.node][i];
-						pq.add(new Edge(i,timeneed,dist[i][timeneed]));
+						pq.add(new Edge(i, timeneed, dist[i][timeneed]));
 					}
-				
+
 			}
-			
+
 		}
 
 	}

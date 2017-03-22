@@ -20,20 +20,19 @@ public class Uva11491_ErasingAndWinning {
 			char[] arr = in.nextLine().toCharArray();
 			Stack<Integer> st = new Stack<>();
 			for (int i = 0; i < n; i++) {
-				if(d != 0)
-					while(!st.isEmpty() && st.peek() < (arr[i] - '0') && d > 0)
-					{
+				if (d != 0)
+					while (!st.isEmpty() && st.peek() < (arr[i] - '0') && d > 0) {
 						st.pop();
 						d--;
 					}
 				st.push(arr[i] - '0');
 			}
-			while(d-- > 0)
+			while (d-- > 0)
 				st.pop();
 			Stack<Integer> temp = new Stack<>();
-			while(!st.isEmpty())
+			while (!st.isEmpty())
 				temp.add(st.pop());
-			while(!temp.isEmpty())
+			while (!temp.isEmpty())
 				sb.append(temp.pop());
 			sb.append("\n");
 		}

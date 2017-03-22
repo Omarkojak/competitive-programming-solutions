@@ -21,14 +21,18 @@ public class CLEANRBT_CleaningRobot {
 	static int solve(int x, int y, int msk) {
 		if (Integer.bitCount(msk) == dirty)
 			return 0;
-		
-		if(dp[x][y][msk] != -1)
+
+		if (dp[x][y][msk] != -1)
 			return dp[x][y][msk];
-		
+
 		int min = inf;
 		for (int i = 0, j = 0; i < dirty; i++, j += 2) {
-			if((msk & (1<<i)) == 0)
-				min = Math.min(min, dist[i][x][y] + solve(dplaces.get(j), dplaces.get(j+1), (msk | 1<<i)));
+			if ((msk & (1 << i)) == 0)
+				min = Math.min(
+						min,
+						dist[i][x][y]
+								+ solve(dplaces.get(j), dplaces.get(j + 1),
+										(msk | 1 << i)));
 		}
 		return dp[x][y][msk] = min;
 	}
@@ -89,19 +93,18 @@ public class CLEANRBT_CleaningRobot {
 					}
 				}
 			}
-			
+
 			dist = new int[dirty][r][c];
 			for (int i = 0, j = 0; j < dirty; i += 2, j++)
 				dist[j] = dijkstra(dplaces.get(i), dplaces.get(i + 1));
-			
-			dp = new int [r][c][(1<<dirty) + 1];
-			for(int i=0;i<r;i++)
-				for(int j=0;j<c;j++)
+
+			dp = new int[r][c][(1 << dirty) + 1];
+			for (int i = 0; i < r; i++)
+				for (int j = 0; j < c; j++)
 					Arrays.fill(dp[i][j], -1);
-		
-			
+
 			int val = solve(rx, ry, 0);
-			if(val != inf)
+			if (val != inf)
 				sb.append(val).append("\n");
 			else
 				sb.append(-1).append("\n");

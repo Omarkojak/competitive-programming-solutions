@@ -9,14 +9,14 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Uva11312_FlippingFrustration {   //TLE
+public class Uva11312_FlippingFrustration {
 	static int r, l, n;
 	static final int inf = (int) 1e9;
 
 	public static int bfs(int target) {
 		Queue<Integer> q = new LinkedList<Integer>();
 		int[] dist = new int[n + 5];
-		boolean []used = new boolean[n+5];
+		boolean[] used = new boolean[n + 5];
 		Arrays.fill(dist, inf);
 		dist[1] = 0;
 		used[1] = true;

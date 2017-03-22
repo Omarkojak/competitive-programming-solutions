@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-// i solved the A and the C
 public class E {
 
 	public static void main(String[] args) throws IOException {
@@ -17,20 +16,18 @@ public class E {
 				break;
 			}
 		}
-//		System.err.println(i);
 
-		int j = s2.length - 1, k=s1.length - 1;
-		for (; j >= 0 && k>= 0 ; j--, k--) {
+		int j = s2.length - 1, k = s1.length - 1;
+		for (; j >= 0 && k >= 0; j--, k--) {
 			if (s2[j] != s1[k]) {
 				break;
 			}
 		}
-	//	System.err.println(j);
-		if(j > i && k > w){
-			System.out.println(j - i  + 1);
-		}else{
-		    if(s1.length >= s2.length)
-			    System.out.println(0);
+		if (j > i && k > w) {
+			System.out.println(j - i + 1);
+		} else {
+			if (s1.length >= s2.length)
+				System.out.println(0);
 			else
 				System.out.println(s2.length - s1.length);
 		}

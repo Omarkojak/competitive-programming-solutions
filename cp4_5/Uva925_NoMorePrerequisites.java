@@ -38,11 +38,10 @@ public class Uva925_NoMorePrerequisites {
 		while (t-- > 0) {
 			V = in.nextInt();
 			TreeMap<String, Integer> mp = new TreeMap<>();
-			String[]data = new String[V];
-			for (int i = 0; i < V; i++)
-			{
+			String[] data = new String[V];
+			for (int i = 0; i < V; i++) {
 				data[i] = in.nextLine();
-				mp.put(data[i], i);	
+				mp.put(data[i], i);
 			}
 
 			adjMatrix = new boolean[V][V];
@@ -64,12 +63,12 @@ public class Uva925_NoMorePrerequisites {
 			for (String s : ev) {
 				ArrayList<String> as = new ArrayList<>();
 				int u = mp.get(s);
-				for(int i =0;i<V;i++)
-					if(graph[i][u])
+				for (int i = 0; i < V; i++)
+					if (graph[i][u])
 						as.add(data[i]);
 				Collections.sort(as);
 				sb.append(s).append(" " + as.size());
-				for(String k:as)
+				for (String k : as)
 					sb.append(" ").append(k);
 				sb.append("\n");
 			}

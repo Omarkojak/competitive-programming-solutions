@@ -9,10 +9,11 @@ import java.util.StringTokenizer;
 public class I {
 	static int r, c;
 	static String s1, s2;
+
 	static int calc1(int x) {
 		int cnt = 0;
-		for (int i=0;i<s1.length();i++) {
-			if(s1.charAt(i) == '^')
+		for (int i = 0; i < s1.length(); i++) {
+			if (s1.charAt(i) == '^')
 				x++;
 			else
 				x--;
@@ -30,8 +31,8 @@ public class I {
 
 	static int calc2(int y) {
 		int cnt = 0;
-		for (int i=0;i<s2.length();i++) {
-			if(s2.charAt(i) == '>')
+		for (int i = 0; i < s2.length(); i++) {
+			if (s2.charAt(i) == '>')
 				y++;
 			else
 				y--;
@@ -56,21 +57,20 @@ public class I {
 		while (t-- > 0) {
 			r = in.nextInt();
 			c = in.nextInt();
-			
+
 			String s = in.next();
 			StringBuilder sb1 = new StringBuilder();
 			StringBuilder sb2 = new StringBuilder();
 			int len = s.length();
 			for (int i = 0; i < len; i++) {
 				char c = s.charAt(i);
-				if(c == '^' || c == 'v')
+				if (c == '^' || c == 'v')
 					sb1.append(c);
 				else
 					sb2.append(c);
 			}
 			s1 = sb1.toString();
 			s2 = sb2.toString();
-			
 
 			int low1 = 1, high1 = r, res1 = Integer.MAX_VALUE;
 			while (high1 - low1 > 3) {

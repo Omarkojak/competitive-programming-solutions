@@ -11,14 +11,13 @@ import java.util.TreeMap;
 
 public class A {
 	static final long inf = (long) 1e18;
-	
-	public static Long ceil(long ans)
-	{
+
+	public static Long ceil(long ans) {
 		int r = 0;
-		if(ans%100 != 0)
+		if (ans % 100 != 0)
 			r++;
-		ans/=100;
-		return ans+r;
+		ans /= 100;
+		return ans + r;
 	}
 
 	public static void main(String[] args) throws IOException {
@@ -37,7 +36,7 @@ public class A {
 				carsinfos.put(in.next(), new Trio(in.nextInt(), in.nextInt(),
 						in.nextInt()));
 			for (int i = 0; i < events; i++) {
-				int time = in.nextInt();
+				in.nextInt();
 				String personname = in.next();
 				char type = in.next().charAt(0);
 
@@ -53,15 +52,14 @@ public class A {
 						continue;
 					}
 					String car = in.next();
-					if(!carsinfos.containsKey(car))
-					{
+					if (!carsinfos.containsKey(car)) {
 						peoplenames.put(personname, -inf);
 						continue;
 					}
-						
+
 					if (!peoplenames.containsKey(personname))
 						peoplenames.put(personname, 0L);
-					
+
 					currcar.put(personname, car);
 				}
 				if (type == 'r') {
@@ -73,7 +71,9 @@ public class A {
 					if (!currcost.containsKey(personname))
 						currcost.put(personname, 0L);
 					long dist = in.nextLong();
-					long totalcost =currcost.get(personname) + carsinfos.get(currcar.get(personname)).kmcost * dist;
+					long totalcost = currcost.get(personname)
+							+ carsinfos.get(currcar.get(personname)).kmcost
+							* dist;
 					long bill = peoplenames.get(personname) + totalcost
 							+ carsinfos.get(currcar.get(personname)).pickup;
 					peoplenames.put(personname, bill);
@@ -89,7 +89,9 @@ public class A {
 						in.next();
 						continue;
 					}
-					Long after = currcost.get(personname)+ ceil(carsinfos.get(currcar.get(personname)).price * in.nextLong());
+					Long after = currcost.get(personname)
+							+ ceil(carsinfos.get(currcar.get(personname)).price
+									* in.nextLong());
 					currcost.put(personname, after);
 				}
 			}

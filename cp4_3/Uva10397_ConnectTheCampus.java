@@ -34,7 +34,8 @@ public class Uva10397_ConnectTheCampus {
 			res += curr.cost;
 			for (int i = 0; i < N; i++)
 				if (i != curr.node && !vis[i])
-					pq.add(new Edge(i, exist[curr.node][i]? 0:dis(curr.node, i)));
+					pq.add(new Edge(i, exist[curr.node][i] ? 0 : dis(curr.node,
+							i)));
 		}
 
 		return res;
@@ -51,7 +52,7 @@ public class Uva10397_ConnectTheCampus {
 	public static void main(String[] args) throws IOException {
 		in = new Scanner(System.in);
 		PrintWriter out = new PrintWriter(System.out);
-		//int t = 2;
+		// int t = 2;
 		while (in.br.ready()) {
 			if (in.nextEmpty())
 				continue;

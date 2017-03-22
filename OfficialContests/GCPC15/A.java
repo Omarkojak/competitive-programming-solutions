@@ -64,10 +64,10 @@ public class A {
 			else
 				return intime[tonode[node]] + taxitime;
 		}
-		
-		if(dp2[taxis][node][msk] != -1)
+
+		if (dp2[taxis][node][msk] != -1)
 			return dp2[taxis][node][msk];
-		
+
 		int min = inf;
 		for (int i = 1; i <= sites; i++) {
 			if ((msk & 1 << i) == 0) {
@@ -135,7 +135,7 @@ public class A {
 			Arrays.fill(dp2[0][i], -1);
 			Arrays.fill(dp2[1][i], -1);
 		}
-		
+
 		min = 0;
 		if (tosite[0] != -1)
 			min = solve2(1, 3, 1);

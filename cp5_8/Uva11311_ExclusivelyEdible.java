@@ -12,13 +12,13 @@ public class Uva11311_ExclusivelyEdible {
 		Scanner in = new Scanner(System.in);
 		StringBuilder sb = new StringBuilder();
 		int t = in.nextInt();
-		while(t-->0){
+		while (t-- > 0) {
 			int n = in.nextInt();
 			int m = in.nextInt();
 			int r = in.nextInt();
 			int c = in.nextInt();
 			int xor = r ^ (n - r - 1) ^ c ^ (m - c - 1);
-			sb.append(xor == 0? "Hansel\n":"Gretel\n");
+			sb.append(xor == 0 ? "Hansel\n" : "Gretel\n");
 		}
 		System.out.print(sb);
 	}

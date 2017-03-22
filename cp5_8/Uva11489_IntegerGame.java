@@ -13,23 +13,24 @@ public class Uva11489_IntegerGame {
 		Scanner in = new Scanner(System.in);
 		PrintWriter out = new PrintWriter(System.out);
 		int t = in.nextInt(), cse = 1;
-		while(t-->0){
-			char[]s = in.nextLine().toCharArray();
+		while (t-- > 0) {
+			char[] s = in.nextLine().toCharArray();
 			int cnt[] = new int[10];
 			int sum = 0;
-			for(int i=0;i<s.length;i++){
+			for (int i = 0; i < s.length; i++) {
 				cnt[s[i] - '0']++;
 				sum += s[i] - '0';
 			}
 			boolean f = false;
-			for(int i=0;i<=9;i++)
-				if(cnt[i] > 0 && (sum-i)%3 == 0){
+			for (int i = 0; i <= 9; i++)
+				if (cnt[i] > 0 && (sum - i) % 3 == 0) {
 					cnt[i]--;
 					f = true;
 					break;
 				}
 			int multiples = cnt[3] + cnt[6] + cnt[9];
-			out.printf("Case %d: %s\n", cse++, (!f || multiples%2 == 1)? "T":"S");
+			out.printf("Case %d: %s\n", cse++, (!f || multiples % 2 == 1) ? "T"
+					: "S");
 		}
 		out.flush();
 		out.close();

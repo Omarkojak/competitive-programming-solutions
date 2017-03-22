@@ -45,13 +45,13 @@ public class A {
 	}
 
 	static double calc(int rank, int size) {
-		if(rank == 0)
+		if (rank == 0)
 			return 0.0;
-		
+
 		double res = 1.0;
-		for(int i=0;i<rank - 1;i++)
+		for (int i = 0; i < rank - 1; i++)
 			res *= ((fac[size] + 1) / fac[size]);
-		return res/fac[size];
+		return res / fac[size];
 	}
 
 	public static void main(String[] args) throws IOException {
@@ -67,7 +67,7 @@ public class A {
 			for (int i = 0; i < size; i++)
 				arr[i] = num.charAt(i) - '0';
 			Arrays.sort(arr);
-			int j = (int)fac[size] - 1;
+			int j = (int) fac[size] - 1;
 			do {
 				int number = 0;
 				for (int i = size - 1, mul = 1; i >= 0; i--, mul *= 10)
@@ -77,7 +77,7 @@ public class A {
 				j--;
 
 			} while (nextPermutation(arr));
-			out.printf("%.9f\n",calc(j, size));
+			out.printf("%.9f\n", calc(j, size));
 		}
 		out.flush();
 		out.close();

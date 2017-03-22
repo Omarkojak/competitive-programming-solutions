@@ -25,7 +25,7 @@ public class SeperateTheNumbers {
 				int start = i;
 				long num = 0;
 				while (start < n) {
-					if (s[start] - '0' == 0 && num == 0) 
+					if (s[start] - '0' == 0 && num == 0)
 						break;
 					num = num * 10 + s[start] - '0';
 					start++;
@@ -35,12 +35,12 @@ public class SeperateTheNumbers {
 						if (start == n)
 							f = true;
 					}
-					
+
 				}
-				if(f)
+				if (f)
 					break;
 			}
-			if(f && s[0] - '0' != 0)
+			if (f && s[0] - '0' != 0)
 				sb.append("YES ").append(ans).append("\n");
 			else
 				sb.append("NO\n");

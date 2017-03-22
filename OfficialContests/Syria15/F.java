@@ -1,6 +1,5 @@
 package OfficialContests.Syria15;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -98,7 +97,7 @@ public class F {
 				cnt[1] += 1;
 				cnt[2] += 1;
 			}
-			
+
 			if (cnt[0] >= 1 && cnt[3] >= 1) {
 				cnt[0] -= 1;
 				cnt[3] -= 1;
@@ -106,7 +105,7 @@ public class F {
 				cnt[0] += 1;
 				cnt[3] += 1;
 			}
-			
+
 			return f;
 
 		}
@@ -123,7 +122,7 @@ public class F {
 			int[] cnt = new int[5];
 			for (char c : s)
 				cnt[c - 'A']++;
-			sb.append(solve(0, cnt)? "YES\n":"NO\n");
+			sb.append(solve(0, cnt) ? "YES\n" : "NO\n");
 
 		}
 		System.out.print(sb);

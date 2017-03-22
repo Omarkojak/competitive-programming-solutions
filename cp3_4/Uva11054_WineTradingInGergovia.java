@@ -11,16 +11,14 @@ public class Uva11054_WineTradingInGergovia {
 	public static void main(String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);
 		StringBuilder sb = new StringBuilder();
-		while(true)
-		{
+		while (true) {
 			int n = in.nextInt();
-			if(n==0)
+			if (n == 0)
 				break;
-				
+
 			long ans = 0;
 			long tradesell = 0;
-			while(n-->0)
-			{
+			while (n-- > 0) {
 				tradesell += in.nextInt();
 				ans += Math.abs(tradesell);
 			}
@@ -29,25 +27,32 @@ public class Uva11054_WineTradingInGergovia {
 		System.out.print(sb);
 
 	}
-	static class Scanner 
-	{
+
+	static class Scanner {
 		StringTokenizer st;
 		BufferedReader br;
-		
-		public Scanner(InputStream s){	br = new BufferedReader(new InputStreamReader(s));}
 
-		public String next() throws IOException 
-		{
-			while (st == null || !st.hasMoreTokens()) 
+		public Scanner(InputStream s) {
+			br = new BufferedReader(new InputStreamReader(s));
+		}
+
+		public String next() throws IOException {
+			while (st == null || !st.hasMoreTokens())
 				st = new StringTokenizer(br.readLine());
 			return st.nextToken();
 		}
 
-		public int nextInt() throws IOException {return Integer.parseInt(next());}
-		
-		public long nextLong() throws IOException {return Long.parseLong(next());}
+		public int nextInt() throws IOException {
+			return Integer.parseInt(next());
+		}
 
-		public String nextLine() throws IOException {return br.readLine();}
-		
+		public long nextLong() throws IOException {
+			return Long.parseLong(next());
+		}
+
+		public String nextLine() throws IOException {
+			return br.readLine();
+		}
+
 	}
 }

@@ -17,9 +17,9 @@ public class A {
 			return 1;
 		if (idx == n || w < 0)
 			return 0;
-		if(dp1[idx][w] != -1)
+		if (dp1[idx][w] != -1)
 			return dp1[idx][w];
-		
+
 		long take = solve1(idx + 1, w - arr1[idx]);
 		long leave = solve1(idx + 1, w);
 		return dp1[idx][w] = (take + leave) % MOD;
@@ -30,10 +30,9 @@ public class A {
 			return 1;
 		if (idx == m || w < 0)
 			return 0;
-		if(dp2[idx][w] != -1)
+		if (dp2[idx][w] != -1)
 			return dp2[idx][w];
-		
-		
+
 		long take = solve2(idx + 1, w - arr2[idx]);
 		long leave = solve2(idx + 1, w);
 		return dp2[idx][w] = (take + leave) % MOD;
@@ -59,7 +58,7 @@ public class A {
 			dp1 = new long[n + 2][15001];
 			for (int i = 0; i < n + 2; i++)
 				Arrays.fill(dp1[i], -1);
-			
+
 			dp2 = new long[m + 2][15001];
 			for (int i = 0; i < m + 2; i++)
 				Arrays.fill(dp2[i], -1);

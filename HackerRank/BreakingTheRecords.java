@@ -7,24 +7,24 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class BreakingTheRecords {
-	
+
 	public static void main(String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt() - 1;
 		int cnt1 = 0, cnt2 = 0;
 		int a = in.nextInt();
 		int min = a, max = a;
-		while(n-->0){
+		while (n-- > 0) {
 			int x = in.nextInt();
-			if(x < min){
+			if (x < min) {
 				cnt1++;
 				min = x;
 			}
-			if(x > max){
+			if (x > max) {
 				cnt2++;
 				max = x;
 			}
-			
+
 		}
 		System.out.println(cnt2 + " " + cnt1);
 	}

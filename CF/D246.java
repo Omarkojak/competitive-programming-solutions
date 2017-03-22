@@ -1,85 +1,58 @@
-package OfficialContest.Romania;
+package CF;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.util.StringTokenizer;
+import java.util.TreeSet;
 
-public class H {
-	static final int max = ((int) 1e5) + 6;
+public class D246 {
 
 	public static void main(String[] args) throws IOException {
-	//	Scanner in = new Scanner(new FileInputStream("meciul.in"));
 		Scanner in = new Scanner(System.in);
-	//	PrintWriter out = new PrintWriter("meciul.out");
-		PrintWriter out = new PrintWriter(System.out);
-		StringBuilder sb = new StringBuilder();
-		int t = in.nextInt();
-		while (t-- > 0) {
-			int n = in.nextInt();
-			int m = in.nextInt();
-			Unionfind uf = new Unionfind(n);
-			while(m-->0)
-			{
-				if(uf.unionSet(in.nextInt(), in.nextInt()))
-					sb.append("YES\n");
-				else
-					sb.append("NO\n");
-			}
-			
+		int n = in.nextInt();
+		int m = in.nextInt();
+		int[] color = new int[n];
+		int size = 0;
+		int min = 1000000;
+		for (int i = 0; i < n; i++) {
+			color[i] = in.nextInt();
+			size = Math.max(size, color[i]);
+			min = Math.min(min, color[i]);
 		}
-		out.print(sb);
-		out.flush();
-		out.close();
+		TreeSet<Integer>[] adjList = new TreeSet[size + 1];
+		for (int i = 0; i < size + 1; i++)
+			adjList[i] = new TreeSet<Integer>();
+
+		boolean done = false;
+		while (m-- > 0) {
+			int u1 = in.nextInt() - 1;
+			int u2 = in.nextInt() - 1;
+			int color1 = color[u1];
+			int color2 = color[u2];
+			if (color1 != color2) {
+				adjList[color1].add(color2);
+				adjList[color2].add(color1);
+				done = true;
+			}
+
+		}
+		if (done) {
+			int max = -1, maxcolor = -1;
+			for (int i = 0; i < size + 1; i++) {
+				if (adjList[i].size() > max) {
+					max = adjList[i].size();
+					maxcolor = i;
+				}
+			}
+			System.out.println(maxcolor);
+		} else {
+			System.out.println(min);
+		}
+
 	}
 
-	static class Unionfind
-	{
-		int []p, rank, size;
-		Unionfind(int n)
-		{
-			p = new int [n+1];
-			rank = new int [n+1];
-			size = new int [n+1];
-			for(int i=1;i<n;i++)
-			{
-				p[i] = i;
-				size[i] = 1; 
-			}
-		}
-		
-		public int findset(int i)
-		{
-			if(p[i] == i)
-				return i;
-			else
-				return p[i] = findset(p[i]);
-		}
-		
-		public boolean unionSet(int i, int j)
-		{
-			int  i1 = findset(i);
-			int j1 = findset(j);
-			if(i1 == j1)
-				return false;
-			if(rank[i1] > rank[j1])
-			{
-				p[j1] = i1;
-			}
-			else
-			{
-				p[i1] = j1;
-				if(rank[i1] == rank[j1])
-					rank[j1]++;
-			}
-			return true;
-		}
-		
-	}
-	
-	
 	static class Scanner {
 		StringTokenizer st;
 		BufferedReader br;

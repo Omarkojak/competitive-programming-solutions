@@ -31,12 +31,13 @@ public class Uva11701_Cantor {
 				sb.append("MEMBER").append("\n");
 			else {
 				s = s.substring(2);
-				int x =0;int i;
-				for(i=0;i<s.length();i++)
+				int x = 0;
+				int i;
+				for (i = 0; i < s.length(); i++)
 					x = x * 10 + s.charAt(i) - '0';
-				for(;i<6;i++)
-					x*=10;
-				sb.append(hasOne(x)? "NON-MEMBER\n":"MEMBER\n");
+				for (; i < 6; i++)
+					x *= 10;
+				sb.append(hasOne(x) ? "NON-MEMBER\n" : "MEMBER\n");
 			}
 
 		}

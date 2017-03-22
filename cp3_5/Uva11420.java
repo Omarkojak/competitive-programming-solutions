@@ -8,95 +8,99 @@ import java.math.BigInteger;
 import java.util.StringTokenizer;
 
 public class Uva11420 {
-	static int n,s;
-	static BigInteger [][][]dp;
-	//top=1:u	top=0:L
-	static BigInteger solve(int top,int idx,int secsofar){
-		if(idx==n)
-			if(secsofar==s)
+	static int n, s;
+	static BigInteger[][][] dp;
+
+	// top=1:u top=0:L
+	static BigInteger solve(int top, int idx, int secsofar) {
+		if (idx == n)
+			if (secsofar == s)
 				return BigInteger.ONE;
 			else
 				return BigInteger.ZERO;
-		
-		if(secsofar>s)
+
+		if (secsofar > s)
 			return BigInteger.ZERO;
-		if(dp[top][idx][secsofar]!=null)
+		if (dp[top][idx][secsofar] != null)
 			return dp[top][idx][secsofar];
-		
-		BigInteger ans=new BigInteger("0");
-		if(top==1){
-			ans= solve(1,idx+1,secsofar).add(solve(0,idx+1,secsofar));
-		}else{
-			ans=solve(0,idx+1,secsofar+1).add(solve(1,idx+1,secsofar));
+
+		BigInteger ans = new BigInteger("0");
+		if (top == 1) {
+			ans = solve(1, idx + 1, secsofar).add(solve(0, idx + 1, secsofar));
+		} else {
+			ans = solve(0, idx + 1, secsofar + 1).add(
+					solve(1, idx + 1, secsofar));
 		}
-		return dp[top][idx][secsofar]=ans;
+		return dp[top][idx][secsofar] = ans;
 	}
-	
+
 	public static void main(String[] args) throws IOException {
-		Scanner in =new Scanner(System.in);
-		//n=in.nextInt();s=in.nextInt();
-		StringBuilder sb=new StringBuilder();
-		while(true){
-			n=in.nextInt();s=in.nextInt();
-			if(n<0)
+		Scanner in = new Scanner(System.in);
+		StringBuilder sb = new StringBuilder();
+		while (true) {
+			n = in.nextInt();
+			s = in.nextInt();
+			if (n < 0)
 				break;
-			dp=new BigInteger[2][n+5][s+5];
-			sb.append(solve(0,0,0)+"\n");
-			//n=in.nextInt();s=in.nextInt();
+			dp = new BigInteger[2][n + 5][s + 5];
+			sb.append(solve(0, 0, 0) + "\n");
 		}
 		System.out.print(sb);
 	}
-	static class Scanner 
-	{
+
+	static class Scanner {
 		StringTokenizer st;
 		BufferedReader br;
-		
-		public Scanner(InputStream s){	br = new BufferedReader(new InputStreamReader(s));}
 
-		public String next() throws IOException 
-		{
-			while (st == null || !st.hasMoreTokens()) 
+		public Scanner(InputStream s) {
+			br = new BufferedReader(new InputStreamReader(s));
+		}
+
+		public String next() throws IOException {
+			while (st == null || !st.hasMoreTokens())
 				st = new StringTokenizer(br.readLine());
 			return st.nextToken();
 		}
 
-		public int nextInt() throws IOException {return Integer.parseInt(next());}
-		
-		public long nextLong() throws IOException {return Long.parseLong(next());}
+		public int nextInt() throws IOException {
+			return Integer.parseInt(next());
+		}
 
-		public String nextLine() throws IOException {return br.readLine();}
-		
-		public double nextDouble() throws IOException
-		{
+		public long nextLong() throws IOException {
+			return Long.parseLong(next());
+		}
+
+		public String nextLine() throws IOException {
+			return br.readLine();
+		}
+
+		public double nextDouble() throws IOException {
 			String x = next();
 			StringBuilder sb = new StringBuilder("0");
 			double res = 0, f = 1;
 			boolean dec = false, neg = false;
 			int start = 0;
-			if(x.charAt(0) == '-')
-			{
+			if (x.charAt(0) == '-') {
 				neg = true;
 				start++;
 			}
-			for(int i = start; i < x.length(); i++)
-				if(x.charAt(i) == '.')
-				{
+			for (int i = start; i < x.length(); i++)
+				if (x.charAt(i) == '.') {
 					res = Long.parseLong(sb.toString());
 					sb = new StringBuilder("0");
 					dec = true;
-				}
-				else
-				{
+				} else {
 					sb.append(x.charAt(i));
-					if(dec)
+					if (dec)
 						f *= 10;
 				}
 			res += Long.parseLong(sb.toString()) / f;
-			return res * (neg?-1:1);
+			return res * (neg ? -1 : 1);
 		}
-		
-		public boolean ready() throws IOException {return br.ready();}
 
+		public boolean ready() throws IOException {
+			return br.ready();
+		}
 
 	}
 }

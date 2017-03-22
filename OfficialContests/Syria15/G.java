@@ -22,11 +22,11 @@ public class G {
 			for (int j = 0; j < 3 * n; j += 3) {
 				int cnt = 0;
 				for (int i = 0; i < 3; i++) {
-					if(grid[i][j] == '*')
+					if (grid[i][j] == '*')
 						cnt++;
-					if(grid[i][j + 1] == '*')
+					if (grid[i][j + 1] == '*')
 						cnt++;
-					if(grid[i][j + 2] == '*')
+					if (grid[i][j + 2] == '*')
 						cnt++;
 				}
 				max = Math.max(max, cnt * 4);

@@ -29,8 +29,7 @@ public class C {
 
 			while (r < enc.length) {
 				int idx = enc[r] - 'a';
-				if(cnt[idx] == 0)
-				{
+				if (cnt[idx] == 0) {
 					l = r;
 					r++;
 					charmatch = 0;
@@ -38,31 +37,28 @@ public class C {
 					match = new boolean[26];
 					break;
 				}
-				if(match[idx])
+				if (match[idx])
 					break;
-				
+
 				window[idx]++;
-				if(window[idx] == cnt[idx])
-				{
+				if (window[idx] == cnt[idx]) {
 					match[idx] = true;
 					charmatch++;
 				}
-				if(charmatch == diff)
+				if (charmatch == diff)
 					flag = true;
 
 				r++;
 			}
-			
+
 			int idx = enc[l] - 'a';
-			if(match[idx])
-			{
+			if (match[idx]) {
 				match[idx] = false;
 				charmatch--;
 			}
 			window[idx]--;
 		}
 
-		
 		if (flag)
 			System.out.println("YES");
 		else

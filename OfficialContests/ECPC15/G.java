@@ -25,7 +25,6 @@ public class G {
 			Edge curr = pq.poll();
 			if (curr.node == V - 1 && dist[V - 1] < cost)
 				return true;
-			
 
 			if (dist[curr.node] < curr.cost || curr.cost >= cost)
 				continue;

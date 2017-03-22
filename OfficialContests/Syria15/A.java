@@ -42,7 +42,7 @@ public class A {
 				if (flag) {
 					low = mid + 1;
 					ans = mid;
-				}else
+				} else
 					high = mid - 1;
 			}
 			System.out.println(ans - sumpaid);

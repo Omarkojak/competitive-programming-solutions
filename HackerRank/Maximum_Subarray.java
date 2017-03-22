@@ -8,54 +8,54 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Maximum_Subarray {
-	
-	public static void shuffle(int []a){
-		int n=a.length;
-		for(int i=0;i<n;i++){
-			int r=i+(int)(Math.random()*(n-i));
-			int temp=a[i];
-			a[i]=a[r];
-			a[r]=temp;
+
+	public static void shuffle(int[] a) {
+		int n = a.length;
+		for (int i = 0; i < n; i++) {
+			int r = i + (int) (Math.random() * (n - i));
+			int temp = a[i];
+			a[i] = a[r];
+			a[r] = temp;
 		}
 	}
 
 	public static void main(String[] args) throws IOException {
-		Scanner in =new Scanner(System.in);
-		int t=in.nextInt();
-		while(t-->0){
-			int n=in.nextInt();
-			int a[]=new int [n];
-			int sump=0;
-			for(int i=0;i<n;i++){
-				a[i]=in.nextInt();
-				if(a[i]>0)
-					sump+=a[i];
+		Scanner in = new Scanner(System.in);
+		int t = in.nextInt();
+		while (t-- > 0) {
+			int n = in.nextInt();
+			int a[] = new int[n];
+			int sump = 0;
+			for (int i = 0; i < n; i++) {
+				a[i] = in.nextInt();
+				if (a[i] > 0)
+					sump += a[i];
 			}
-			int sum=0;
-			int ans=0;
+			int sum = 0;
+			int ans = 0;
 			for (int i = 0; i < n; i++) {
 				sum += a[i];
-				ans = Math.max(ans, sum); 
+				ans = Math.max(ans, sum);
 				if (sum < 0)
 					sum = 0;
 			}
-			
+
 			shuffle(a);
 			Arrays.sort(a);
-			if(ans!=0)
+			if (ans != 0)
 				System.out.print(ans);
 			else
-				System.out.print(a[n-1]);
-			
-			if(sump!=0)
-				System.out.println(" "+sump);
+				System.out.print(a[n - 1]);
+
+			if (sump != 0)
+				System.out.println(" " + sump);
 			else
-				System.out.println(" "+a[n-1]);
-			
+				System.out.println(" " + a[n - 1]);
+
 		}
 
 	}
-	
+
 	static class Scanner {
 		StringTokenizer st;
 		BufferedReader br;

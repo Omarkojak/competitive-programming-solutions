@@ -34,7 +34,7 @@ public class F {
 	public static int ev(int i) {
 		boolean flag = true;
 		for (int k = 0; k < 5; k++)
-			for (int w = i, r=0; w <= i + 2; w++, r++)
+			for (int w = i, r = 0; w <= i + 2; w++, r++)
 				if (grid[k][w] != zero[k][r])
 					flag = false;
 
@@ -43,7 +43,7 @@ public class F {
 
 		flag = true;
 		for (int k = 0; k < 5; k++)
-			for (int w = i, r=0; w <= i + 2; w++, r++)
+			for (int w = i, r = 0; w <= i + 2; w++, r++)
 				if (grid[k][w] != one[k][r])
 					flag = false;
 
@@ -52,7 +52,7 @@ public class F {
 
 		flag = true;
 		for (int k = 0; k < 5; k++)
-			for (int w = i, r=0; w <= i + 2; w++, r++)
+			for (int w = i, r = 0; w <= i + 2; w++, r++)
 				if (grid[k][w] != two[k][r])
 					flag = false;
 
@@ -61,7 +61,7 @@ public class F {
 
 		flag = true;
 		for (int k = 0; k < 5; k++)
-			for (int w = i, r=0; w <= i + 2; w++, r++)
+			for (int w = i, r = 0; w <= i + 2; w++, r++)
 				if (grid[k][w] != three[k][r])
 					flag = false;
 
@@ -70,7 +70,7 @@ public class F {
 
 		flag = true;
 		for (int k = 0; k < 5; k++)
-			for (int w = i, r=0; w <= i + 2; w++, r++)
+			for (int w = i, r = 0; w <= i + 2; w++, r++)
 				if (grid[k][w] != four[k][r])
 					flag = false;
 
@@ -79,7 +79,7 @@ public class F {
 
 		flag = true;
 		for (int k = 0; k < 5; k++)
-			for (int w = i, r=0; w <= i + 2; w++, r++)
+			for (int w = i, r = 0; w <= i + 2; w++, r++)
 				if (grid[k][w] != five[k][r])
 					flag = false;
 
@@ -88,7 +88,7 @@ public class F {
 
 		flag = true;
 		for (int k = 0; k < 5; k++)
-			for (int w = i, r=0; w <= i + 2; w++, r++)
+			for (int w = i, r = 0; w <= i + 2; w++, r++)
 				if (grid[k][w] != six[k][r])
 					flag = false;
 
@@ -97,7 +97,7 @@ public class F {
 
 		flag = true;
 		for (int k = 0; k < 5; k++)
-			for (int w = i, r=0; w <= i + 2; w++, r++)
+			for (int w = i, r = 0; w <= i + 2; w++, r++)
 				if (grid[k][w] != seven[k][r])
 					flag = false;
 
@@ -106,7 +106,7 @@ public class F {
 
 		flag = true;
 		for (int k = 0; k < 5; k++)
-			for (int w = i, r=0; w <= i + 2; w++, r++)
+			for (int w = i, r = 0; w <= i + 2; w++, r++)
 				if (grid[k][w] != eight[k][r])
 					flag = false;
 
@@ -115,7 +115,7 @@ public class F {
 
 		flag = true;
 		for (int k = 0; k < 5; k++)
-			for (int w = i, r=0; w <= i + 2; w++, r++)
+			for (int w = i, r = 0; w <= i + 2; w++, r++)
 				if (grid[k][w] != nine[k][r])
 					flag = false;
 
@@ -137,26 +137,22 @@ public class F {
 		int found = -1;
 		for (int i = 2; i <= 8; i++) {
 			int size = i * 3 + (i - 1);
-			if(size == grid[0].length)
-			{
+			if (size == grid[0].length) {
 				found = i;
 				break;
 			}
 		}
-		//System.err.println(found);
 		long mul = (long) Math.pow(10, found - 1);
 		long res = 0;
 		boolean flag = true;
 
 		for (int i = 0; i < grid[0].length; i += 4, mul /= 10) {
 			int num = ev(i);
-			//System.err.println(num);
 			if (num == -1)
 				flag = false;
 			else
 				res += num * mul;
 		}
-	//	System.err.println(res);
 		if (flag && res % 6 == 0)
 			System.out.println("BEER!!");
 		else

@@ -82,7 +82,7 @@ public class D {
 		}
 
 		public String toString() {
-			return  node + " " + time;
+			return node + " " + time;
 		}
 
 	}

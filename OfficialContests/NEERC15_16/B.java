@@ -13,8 +13,8 @@ import java.util.StringTokenizer;
 public class B {
 
 	public static void main(String[] args) throws IOException {
-//		 Scanner in = new Scanner(System.in);
-//		 PrintWriter out = new PrintWriter(System.out);
+		// Scanner in = new Scanner(System.in);
+		// PrintWriter out = new PrintWriter(System.out);
 		Scanner in = new Scanner(new File("black.in"));
 		PrintWriter out = new PrintWriter("black.out");
 		int b = in.nextInt();

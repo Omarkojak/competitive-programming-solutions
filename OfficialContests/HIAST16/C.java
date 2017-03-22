@@ -84,7 +84,7 @@ public class C {
 			int x = in.nextInt() - 1;
 			int y = in.nextInt() - 1;
 			Pair res = dijkstra(x, y);
-			if(res.tc == inf || res.tw == inf)
+			if (res.tc == inf || res.tw == inf)
 				sb.append("-1\n");
 			else
 				sb.append(res.tw + " " + (res.tc + res.tw)).append("\n");

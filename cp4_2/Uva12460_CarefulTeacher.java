@@ -16,39 +16,32 @@ public class Uva12460_CarefulTeacher {
 	static int dist[];
 	static int n;
 	static final int inf = (int) 1e9;
-	
-	public static void bfs(int source)
-	{
-		dist = new int [n];
+
+	public static void bfs(int source) {
+		dist = new int[n];
 		Arrays.fill(dist, inf);
 		Queue<Integer> q = new LinkedList<Integer>();
 		q.add(source);
 		dist[source] = 0;
-		while(!q.isEmpty())
-		{
+		while (!q.isEmpty()) {
 			int curr = q.poll();
-			for(int v:adjList[curr])
-			{
-				if(dist[v] > dist[curr] + 1)
-				{
+			for (int v : adjList[curr]) {
+				if (dist[v] > dist[curr] + 1) {
 					dist[v] = dist[curr] + 1;
 					q.add(v);
 				}
 			}
 		}
 	}
-	
-	public static boolean diffone(String s1, String s2)
-	{
-		if(s1.length()!= s2.length())
+
+	public static boolean diffone(String s1, String s2) {
+		if (s1.length() != s2.length())
 			return false;
 		boolean found = false;
 		int l = s1.length();
-		for(int i=0;i<l;i++)
-		{
-			if(s1.charAt(i) != s2.charAt(i))
-			{
-				if(found)
+		for (int i = 0; i < l; i++) {
+			if (s1.charAt(i) != s2.charAt(i)) {
+				if (found)
 					return false;
 				else
 					found = true;
@@ -63,26 +56,22 @@ public class Uva12460_CarefulTeacher {
 		n = 0;
 		TreeMap<String, Integer> mp = new TreeMap<>();
 		ArrayList<String> words = new ArrayList<>();
-		while(true)
-		{
+		while (true) {
 			String s = in.nextLine();
-			if(s.equals("--"))
+			if (s.equals("--"))
 				break;
 			words.add(s);
 			mp.put(s, n++);
 		}
-		
+
 		adjList = new ArrayList[n];
-		for(int i=0;i<n;i++)
+		for (int i = 0; i < n; i++)
 			adjList[i] = new ArrayList<>();
-		for(int i=0;i<n;i++)
-		{
-			for(int j=i+1;j<n;j++)
-			{
+		for (int i = 0; i < n; i++) {
+			for (int j = i + 1; j < n; j++) {
 				String s1 = words.get(i);
 				String s2 = words.get(j);
-				if(diffone(s1, s2))
-				{
+				if (diffone(s1, s2)) {
 					int u = mp.get(s1);
 					int v = mp.get(s2);
 					adjList[u].add(v);
@@ -90,40 +79,45 @@ public class Uva12460_CarefulTeacher {
 				}
 			}
 		}
-		
-		
+
 		String s = in.nextLine();
-		while(s != null && s.length()!=0)
-		{	
+		while (s != null && s.length() != 0) {
 			StringTokenizer ns = new StringTokenizer(s);
 			String s1 = ns.nextToken();
 			String s2 = ns.nextToken();
 			bfs(mp.get(s1));
-			sb.append((dist[mp.get(s2)] != inf)? "Yes\n": "No\n");
+			sb.append((dist[mp.get(s2)] != inf) ? "Yes\n" : "No\n");
 			s = in.nextLine();
 		}
 		System.out.print(sb);
 
 	}
-	static class Scanner 
-	{
+
+	static class Scanner {
 		StringTokenizer st;
 		BufferedReader br;
-		
-		public Scanner(InputStream s){	br = new BufferedReader(new InputStreamReader(s));}
 
-		public String next() throws IOException 
-		{
-			while (st == null || !st.hasMoreTokens()) 
+		public Scanner(InputStream s) {
+			br = new BufferedReader(new InputStreamReader(s));
+		}
+
+		public String next() throws IOException {
+			while (st == null || !st.hasMoreTokens())
 				st = new StringTokenizer(br.readLine());
 			return st.nextToken();
 		}
 
-		public int nextInt() throws IOException {return Integer.parseInt(next());}
-		
-		public long nextLong() throws IOException {return Long.parseLong(next());}
+		public int nextInt() throws IOException {
+			return Integer.parseInt(next());
+		}
 
-		public String nextLine() throws IOException {return br.readLine();}
-		
+		public long nextLong() throws IOException {
+			return Long.parseLong(next());
+		}
+
+		public String nextLine() throws IOException {
+			return br.readLine();
+		}
+
 	}
 }

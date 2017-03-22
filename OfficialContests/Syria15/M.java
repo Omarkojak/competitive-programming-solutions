@@ -1,6 +1,5 @@
 package OfficialContests.Syria15;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -23,7 +22,7 @@ public class M {
 			String[] arr = new String[limit];
 			int[][] schedule = new int[limit][368];
 			int idx = 0;
-			while(N-->0){
+			while (N-- > 0) {
 				StringTokenizer ns = new StringTokenizer(bf.readLine());
 				ns.nextToken();
 				int start = Integer.parseInt(ns.nextToken());
@@ -31,7 +30,7 @@ public class M {
 				int V = Integer.parseInt(ns.nextToken());
 				while (V-- > 0) {
 					String s = ns.nextToken();
-					
+
 					if (!coaches.containsKey(s)) {
 						coaches.put(s, idx);
 						arr[idx] = s;
@@ -44,22 +43,20 @@ public class M {
 
 				}
 			}
-	//		System.err.println(Arrays.toString(arr));
 			ArrayList<String> output = new ArrayList<>();
 			for (int i = 0; i < idx; i++) {
 				boolean conflict = false;
-				for (int j = 1; j < 368; j++){
-					schedule[i][j] += schedule[i][j-1];
-					if(schedule[i][j] >=2)
+				for (int j = 1; j < 368; j++) {
+					schedule[i][j] += schedule[i][j - 1];
+					if (schedule[i][j] >= 2)
 						conflict = true;
 				}
-	//			System.err.println(conflict + " " + i + "  " + arr[i]);
-				if(conflict)
+				if (conflict)
 					output.add(arr[i]);
 			}
 			Collections.sort(output);
 			sb.append(output.size()).append("\n");
-			for(String s:output)
+			for (String s : output)
 				sb.append(s).append("\n");
 		}
 		System.out.print(sb);

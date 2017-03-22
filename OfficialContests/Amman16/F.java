@@ -36,7 +36,7 @@ public class F {
 				if (c == first)
 					sb.append(second);
 				else {
-					if(c == second)
+					if (c == second)
 						sb.append(first);
 					else
 						sb.append(c);

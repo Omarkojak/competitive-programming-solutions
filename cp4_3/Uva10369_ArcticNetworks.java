@@ -21,7 +21,6 @@ public class Uva10369_ArcticNetworks {
 			if (!uf.isSameSet(e.from, e.to)) {
 				mst = Math.max(mst, e.cost);
 				uf.unionSet(e.from, e.to);
-				// System.err.println(e.cost + " " + e.from + " " + e.to);
 			}
 			if (uf.numDisjointSets() == K)
 				break;
@@ -113,7 +112,6 @@ public class Uva10369_ArcticNetworks {
 				return;
 			numSets--;
 			int x = findSet(i), y = findSet(j);
-			// rank is used to keep the tree short
 			if (rank[x] > rank[y]) {
 				p[y] = x;
 				setSize[x] += setSize[y];

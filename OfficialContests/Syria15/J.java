@@ -58,11 +58,11 @@ public class J {
 			}
 			output = new ArrayList<Integer>();
 			vis = new boolean[N];
-			while (K--> 0) {
+			while (K-- > 0) {
 				dfs(topics.get(in.next()));
 			}
 			Collections.sort(output);
-			for(int u:output)
+			for (int u : output)
 				sb.append(arr[u]).append("\n");
 
 		}

@@ -20,13 +20,13 @@ public class Uva847_AMultiplicationGame {
 			long p = 1;
 			int id = 0;
 			while (p < n) {
-				if(id == 0)
+				if (id == 0)
 					p *= 9;
 				else
 					p *= 2;
 				id ^= 1;
 			}
-			sb.append(id == 1? "Stan wins.\n":"Ollie wins.\n");
+			sb.append(id == 1 ? "Stan wins.\n" : "Ollie wins.\n");
 		}
 		System.out.print(sb);
 	}

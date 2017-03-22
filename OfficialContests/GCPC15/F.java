@@ -38,7 +38,6 @@ public class F {
 				y = x;
 				k *= 2;
 			}
-//			k*=2;
 		}
 	}
 

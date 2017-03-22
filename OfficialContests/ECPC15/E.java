@@ -34,26 +34,27 @@ public class E {
 				Arrays.fill(dp[i][j], -inf);
 
 		dp[0][0][threes[arr[0][0]]] = twos[arr[0][0]];
-		for (int i = 0; i < n; i++) 
+		for (int i = 0; i < n; i++)
 			for (int j = 0; j < m; j++) {
 				if (i == 0 && j == 0)
 					continue;
 				for (int k = threes[arr[i][j]]; k < 1500; k++) {
 					int max = -inf;
-					if(i > 0)
-						max = Math.max(max, dp[i-1][j][k - threes[arr[i][j]]] + twos[arr[i][j]]);
-					
-					if(j > 0)
-						max = Math.max(max, dp[i][j - 1][k - threes[arr[i][j]]] + twos[arr[i][j]]);
-					
+					if (i > 0)
+						max = Math.max(max, dp[i - 1][j][k - threes[arr[i][j]]]
+								+ twos[arr[i][j]]);
+
+					if (j > 0)
+						max = Math.max(max, dp[i][j - 1][k - threes[arr[i][j]]]
+								+ twos[arr[i][j]]);
+
 					dp[i][j][k] = max;
 				}
 			}
-		
-		
+
 		int max = Integer.MIN_VALUE;
-		for(int k=0;k<1500;k++)
-			max = Math.max(max, Math.min(k, dp[n-1][m-1][k]));
+		for (int k = 0; k < 1500; k++)
+			max = Math.max(max, Math.min(k, dp[n - 1][m - 1][k]));
 		return max;
 
 	}

@@ -17,15 +17,14 @@ public class Uva10702_TravellingSalesman {
 		if (travels == 0)
 			return exit[node] ? 0 : -inf;
 
-		if(dp[node][travels] != -1)
+		if (dp[node][travels] != -1)
 			return dp[node][travels];
-		
+
 		long max = -inf;
 		for (int i = 0; i < N; i++)
 			max = Math.max(max, profit[node][i] + solve(i, travels - 1));
 		return dp[node][travels] = max;
 	}
-
 
 	public static void main(String[] args) throws IOException {
 		Scanner in = new Scanner(System.in);
@@ -46,7 +45,7 @@ public class Uva10702_TravellingSalesman {
 				exit[in.nextInt() - 1] = true;
 			}
 			dp = new long[105][1005];
-			for(int i=0;i<105;i++)
+			for (int i = 0; i < 105; i++)
 				Arrays.fill(dp[i], -1);
 			sb.append(solve(start, travels)).append("\n");
 

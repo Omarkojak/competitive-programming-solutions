@@ -15,11 +15,11 @@ public class D {
 		while (t-- > 0) {
 			StringTokenizer ns = new StringTokenizer(in.nextLine());
 			TreeSet<Integer> ts = new TreeSet<>();
-			while(ns.hasMoreTokens())
+			while (ns.hasMoreTokens())
 				ts.add(Integer.parseInt(ns.nextToken()));
-			long ans = ((long)ts.pollLast()) * ((long)ts.pollLast());
+			long ans = ((long) ts.pollLast()) * ((long) ts.pollLast());
 			System.out.println(ans);
-					
+
 		}
 
 	}

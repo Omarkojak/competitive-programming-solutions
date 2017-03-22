@@ -7,12 +7,12 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Uva12469_Stones {
-	static Boolean [][] dp;
+	static Boolean[][] dp;
 
 	static boolean solve(int rem, int cnt) {
 		if (rem == 0 || cnt == 0)
 			return false;
-		if(dp[rem][cnt] != null)
+		if (dp[rem][cnt] != null)
 			return dp[rem][cnt];
 		boolean op1 = cnt * 2 >= rem - cnt ? false : !solve(rem - cnt, cnt * 2);
 		boolean op2 = solve(rem, cnt - 1);

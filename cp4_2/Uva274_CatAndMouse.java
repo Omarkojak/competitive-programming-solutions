@@ -65,7 +65,7 @@ public class Uva274_CatAndMouse {
 			for (Edge u : adjList[mousehome])
 				if (!reachc[u.node] && u.type == 'M' && !reachc[mousehome])
 					f2 = true;
-			
+
 			sb.append((f1 ? "Y" : "N") + " " + (f2 ? "Y" : "N")).append("\n");
 			if (t != 0)
 				sb.append("\n");
